@@ -1,0 +1,15 @@
+<% unless flash.keys.empty? %>
+  <div class="alert-container" style='display:none;z-index:5000;'>
+    <div class="alert">
+      <% flash.each do |key, text| %>
+        <%= content_tag(:div, text, :class => "flash_#{key}") %>
+      <% end %>
+      <%= link_to_function(image_tag("cross_ico.png", :alt=>t('label.close')), "$(this).parents('div.alert-container').slideUp()", :class=>"close") %>
+    </div>
+  </div>
+  <script type='text/javascript' charset='UTF-8'>
+    $(document).ready(function(){
+      $('div.alert-container').slideDown('slow');
+    })
+  </script>
+<% end %>

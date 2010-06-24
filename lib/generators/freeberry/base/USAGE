@@ -1,0 +1,7 @@
+Usage:
+  rails generate freeberry:base
+
+Options:
+                 
+Example:
+  rails g freeberry:base

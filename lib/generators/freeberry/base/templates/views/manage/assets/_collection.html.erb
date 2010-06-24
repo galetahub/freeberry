@@ -1,0 +1,36 @@
+<% unless model.new_record? %>
+  <% javascript "jquery.fancybox-1.3.1.pack.js" %>
+  <% stylesheet "jquery.fancybox-1.3.1.css" %>
+  
+  <div class="gray-blocks">
+    <div style="padding: 20px;" class="bg-bl">
+      <div style="padding: 0px 0px 15px;" class="gr-title"><%= t('manage.pictures') %></div>
+      
+      <%= content_tag(:div, :id=>"swf_collection_#{model.id}", :class=>"galery") do %>
+        <%= render :partial=>"/manage/assets/picture", :collection => model.pictures %>
+      <% end %>
+      
+      <div style="padding-top:20px;">
+        <%= content_tag(:span, nil, :id=>"swf_button_#{model.id}", :class=>"white-but") %>
+        <%= content_tag(:div, nil, :id=>"swf_container_#{model.id}") %>
+      </div>
+    </div>
+  </div>
+  
+  <%= render :partial=>"/manage/assets/swfscript", :locals=>{:model=>model, :klass=>model.pictures.name } %>
+  
+  <script type='text/javascript'>
+    $(document).ready(function(){
+      $("div.galery a.fancybox").fancybox({
+				'titleShow'		: true,
+				'transitionIn'	: 'none',
+				'transitionOut'	: 'none'
+			});
+     
+      $('div.galery a.del').bind("ajax:complete", function(){
+        var pid = $(this).attr('href').replace('/manage/assets/', '');
+        $('#picture_' + pid).fadeOut(1);
+      });
+    });
+  </script>
+<% end %>

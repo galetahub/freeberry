@@ -1,0 +1,24 @@
+class Manage::SettingsController < Manage::BaseController
+  # GET /manage/settings
+  def index
+    @settings = Freeberry::SystemSettings.ostruct
+  end
+  
+  # POST /manage/settings
+  def create
+    respond_to do |format|
+    	if Freeberry::SystemSettings.update_settings(params[:settings])
+        flash[:notice] = I18n.t('flash.manage.settings.create.success')
+        
+        format.html { redirect_to manage_settings_path }
+        format.xml { head :ok }
+      else
+      	flash.now[:error] = I18n.t('flash.manage.settings.create.failure')
+      	@settings = Freeberry::SystemSettings.ostruct
+      	
+        format.html { render :action => "index" }
+        format.xml { head :unprocessable_entity }
+      end
+    end
+  end
+end

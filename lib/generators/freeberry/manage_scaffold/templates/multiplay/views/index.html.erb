@@ -1,0 +1,32 @@
+<div class="duo-bl">
+  <div class="left-part">
+    <div class="content">
+    	<div class="row-container">
+        <div class="white-row">
+          <div class="r-corn">
+            <%%= link_to t('manage.menu.<%= plural_name %>'), manage_<%= parent_singular_name %>_<%= plural_name %>_path(@<%= parent_singular_name %>.id), :class=>"dark-text" %>
+            <div class="act-bl">
+              <%%= link_to t('manage.add'), new_manage_<%= parent_singular_name %>_<%= singular_name %>_path(@<%= parent_singular_name %>.id), :class=>"create" %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="<%= plural_name %>" class="stage">
+        <%%= render :partial=>"manage/<%= plural_name %>/<%= singular_name %>", :collection=>@<%= plural_name %> %>
+        <%%= will_paginate @<%= plural_name %>, options_for_pagination %>
+      </div>
+      
+      <script type='text/javascript'>
+        $(document).ready(function(){
+          init_collection('<%= plural_name %>', 'dinamic-bl');
+        });
+      </script>
+    </div>
+  </div>
+  
+  <div class="right-part">
+    <div class="filter-right">
+      <%%= render :partial=>"manage/<%= plural_name %>/model_filter" %>
+    </div>
+  </div>
+</div> 

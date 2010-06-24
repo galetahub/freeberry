@@ -1,0 +1,5 @@
+== Freeberry
+
+rails generate freeberry:base
+rails generate freeberry:models [options]
+rails generate freeberry:manage_scaffold ModelName

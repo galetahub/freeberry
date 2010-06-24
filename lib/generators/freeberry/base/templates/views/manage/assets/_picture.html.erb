@@ -1,0 +1,10 @@
+<%= content_tag(:div, :class=>"ill", :id=>"picture_#{picture.id}") do %>
+  <%= link_to image_tag("manage/empty.gif", :alt=>t('manage.delete'), :title=>t('manage.delete')), 
+          manage_asset_path(picture), 
+          :remote => true,
+          :method => :delete, 
+          :confirm => t('manage.confirm_delete'),
+          :class => "del" %>
+          
+  <%= link_to image_tag(picture.url(:thumb), :alt=>picture.filename, :title=>picture.filename), picture.url(:content), :class => "fancybox" %>
+<% end %>

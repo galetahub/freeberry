@@ -1,0 +1,11 @@
+Usage:
+  rails generate freeberry:models [options]
+
+Options:
+  [--migrations]  # Indicates when to generate migrations
+                  # Default: true
+                 
+Example:
+  rails g freeberry:models
+  
+  rails g freeberry:models --skip-migrations

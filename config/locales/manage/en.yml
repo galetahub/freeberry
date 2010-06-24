@@ -1,0 +1,251 @@
+en:
+  activerecord:
+    attributes:
+      user:
+        name: "Name"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Confirm password"
+        avatar: "Avatar"
+      
+      artist:
+        name: "Name"
+        name_ru: "Name <span>(rus)</span>"
+        name_en: "Name <span>(eng.)</span>"
+        notes: "Summary"
+        notes_ru: "Short description <span>(rus)</span>"
+        notes_en: "Short description <span>(eng.)</span>"
+        content: "Full description"
+        content_ru: "Full description <span>(rus)</span>"
+        content_en: "Full description <span>(eng.)</span>"
+        photo: "Photo"
+      
+      track:
+        title: "Title"
+        kind: "Type"
+        position: "Position"
+        release: "Release"
+        mp3: "MP3"
+        release_id: "Release"
+      
+      release:
+        cover: "Cover"
+        title: "Title"
+        title_ru: "Name <span>(rus)</span>"
+        title_en: "Name <span>(eng.)</span>"
+        notes: "Description"
+        kind: "Type"
+        notes_ru: "Description <span>(rus)</span>"
+        notes_en: "Description <span>(eng.)</span>"
+        artist_id: "Artist"
+      
+      member:
+        shop_id: "Shop"
+        bay_url: "Link to product"
+      
+      shop:
+        name: "Title"
+        name_ru: "Name <span>(rus)</span>"
+        name_en: "Name <span>(eng.)</span>"
+        notes: "Description"
+        notes_ru: "Description <span>(rus)</span>"
+        notes_en: "Description <span>(eng.)</span>"
+        url: "Link"
+        image: "Logo"
+      
+      post:
+        title: "Title"
+        title_ru: "Name <span>(rus)</span>"
+        title_en: "Name <span>(eng.)</span>"
+        content: "Content"
+        content_ru: "Contents <span>(rus)</span>"
+        content_en: "Contents <span>(eng.)</span>"
+        created_at: "Date/Time"
+        picture: "Picture"
+      
+      page:
+        title: "Title"
+        title_ru: "Name <span>(rus)</span>"
+        title_en: "Name <span>(eng.)</span>"
+        content: "Content"
+        content_ru: "Contents <span>(rus)</span>"
+        content_en: "Contents <span>(eng.)</span>"
+        
+  manage:
+    title: "Management<br/>System"
+    go_site: "Go to site"
+    exit: "Logout"
+    page_title: "Site Manager"
+    site_edit: "Management System"
+    root: "Go to site"
+    users: "Community"
+    label_settings: "Settings"
+    structure: "Structure"
+    new_structure: "Create Section"
+    user_actions: "Actions"
+    posts: "Blog"
+    new_post: "Add Post"
+    confirm_delete: "Are you sure you want to delete the record?"
+    prev: "Previous"
+    next: "Next"
+    max_size: "Max size"
+    keywords: "Keywords"
+    edit: "Edit"
+    settings: "Settings"
+    delete: "Remove"
+    add: "Add"
+    create: "Create"
+    cancel: "Cancel"
+    update: "Refresh"
+    sort: "Sort"
+    
+    menu:
+      structures: "Structure"
+      users: "Community"
+      system_messages: "System messages"
+      settings: "Settings"
+      other: "Other"
+      posts: "News"
+      artists: "Performers"
+      shops: "Shops"
+      releases: "Releases"
+      tracks: "Tracks"
+    
+    settings:
+      title: "Settings"
+      mailer: "Mail"
+      route: "Domain"
+      contacts: "Contact"
+    
+    locale:
+      ru: "Russian"
+      en: "English"
+    
+    model_filter: 
+      title: "Filter data"
+      filter: "Filter"
+      search: "Search"
+      clear: "Clean"
+    
+    position:
+      down: "Lower down"
+      up: "Raise Up"
+    
+    buttons:
+      create_structure: "Create Section"
+    
+    user:
+      actions: "action"
+      events:
+        register: "Register"
+        suspend: "Freeze"
+        delete: "Remove"
+        unsuspend: "Disintegrate freezingly"
+        activate: "Activate"
+      roles: "Roles"
+      
+    users:
+      activated_at: "activation"
+      last_login_ip: "ip"
+      email: "email"
+      
+      sort:
+        _: "--"
+        created_at_desc: "by date descending"
+        created_at_asc: "date ascending"
+        name_desc: "name descending"
+        name_asc: "name ascending"
+    
+    artists:
+      sort:
+        _: "--"
+        created_at_desc: "by date descending"
+        created_at_asc: "date ascending"
+        name_desc: "name descending"
+        name_asc: "name ascending"
+      tracks: "Artist tracks"
+    
+    role:
+      kind:
+        guest: "Guest"
+        default: "Client"
+        moderator: "Moderator"
+        admin: "Administrator"
+    
+    track:
+      kind:
+        default: "Default"
+        promo: "Promo"
+        podcast: "Podcast"
+      
+      position:
+        default: "Default"
+        main_page: "Home Page"
+    
+    tracks:
+      sort:
+        _: "--"
+        created_at_desc: "by date descending"
+        created_at_asc: "date ascending"
+        title_desc: "by name descending"
+        title_asc: "by name ascending"
+    
+    shops:
+      sort:
+        _: "--"
+        created_at_desc: "by date descending"
+        created_at_asc: "date ascending"
+        name_desc: "name descending"
+        name_asc: "name ascending"
+    
+    posts:
+      sort:
+        _: "--"
+        created_at_desc: "by date descending"
+        created_at_asc: "date ascending"
+        title_desc: "by name descending"
+        title_asc: "by name ascending"
+    
+    releases:
+      members: "Shops selling"
+      add_member: "Add Store"
+      artist: "Artist"
+      title: "Release"
+      
+      sort:
+        _: "--"
+        created_at_desc: "by date descending"
+        created_at_asc: "date ascending"
+        title_desc: "by name descending"
+        title_asc: "by name ascending"
+    
+  flash:
+    manage:      
+      actions:
+        create:
+          success: "Record created successfully"
+          failure: "An error occurred while saving data"
+        update:
+          success: "Record successfully updated"
+          failure: "An error occurred while updating"
+        destroy:
+          success: "Record successfully deleted"
+          failure: "An error occurred while deleting data"
+        
+      users:
+        create:
+          success: "Account have successfully created"
+          failure: "An error occurred while creating user"
+      
+      settings:
+        create:
+          success: "Settings successfully updated"
+          failure: "An error occurred while saving data"
+      
+      pages:
+        create:
+          success: "Page successfully saved"
+          failure: "An error occurred while saving data"
+        update:
+          success: "Page successfully saved"
+          failure: "An error occurred while saving data"

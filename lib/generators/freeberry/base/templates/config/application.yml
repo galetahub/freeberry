@@ -1,0 +1,9 @@
+route:
+  url: "http://<%= app_name %>.brainberry.com.ua"
+  host: "<%= app_name %>.brainberry.com.ua"
+  protocol: "http"
+  
+mailer:
+  subject_prefix: "[<%= app_name %>] "
+  from: "no-reply@brainberry.ua"
+  reply_to: "info@brainberry.ua"

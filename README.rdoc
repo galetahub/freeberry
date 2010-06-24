@@ -1,0 +1,70 @@
+= Freeberry
+Brainberry Content Managment System
+
+== Dependents
+Plugins:
+  rails plugin install git://github.com/galetahub/enum_field.git
+  rails plugin install git://github.com/galetahub/awesome_nested_set.git
+  rails plugin install git://github.com/galetahub/salty_slugs.git
+  rails plugin install git://github.com/galetahub/auto_html.git
+  
+  rails plugin install git://github.com/galetahub/attach_file_field.git
+  rails generate attach_file_field
+
+Gems:
+  gem 'paperclip'
+  gem 'will_paginate'
+  gem 'warden'
+  gem 'devise'
+  gem 'nokogiri'
+  gem 'declarative_authorization'
+  gem 'ckeditor'
+  gem "mime-types", :require => 'mime/types'
+  gem 'inherited_resources'
+  gem 'haddock'
+
+== Install
+Devise (http://github.com/plataformatec/devise)
+  rails generate devise:install
+
+Ckeditor (http://github.com/galetahub/rails-ckeditor)
+  rails generate ckeditor:base
+  rails generate ckeditor:migration
+
+Freeberry
+  rails generate freeberry:base
+  rails generate freeberry:models
+  
+  cp config/application.yml.sample config/application.yml
+  cp config/database.yml.sample config/database.yml
+  
+  rake db:seed
+  rake db:mirate
+
+In config/application.rb:
+  config.load_paths += %W( #{config.root}/app/models/defaults )
+
+== Usage
+=== MysqlUtils
+  * database_exists?
+  * truncate_table
+  * disable_keys
+  * enable_keys
+  * with_keys_disabled
+
+=== Settingslogic
+  cass SystemSettings < Freeberry::Settingslogic
+    source Rails.root.join("config", "application.yml")
+  end
+
+== TODO
+1. Generators
+  - default routes
+
+Example
+=======
+
+Example goes here.
+
+
+Copyright (c) 2010 Brainberry, released under the MIT license

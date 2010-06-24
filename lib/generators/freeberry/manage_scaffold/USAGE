@@ -1,0 +1,6 @@
+ManageScaffold
+==============
+
+rails generate freeberry:manage_scaffold ModelName
+
+rails generate freeberry:manage_scaffold ModelName --parent=ParentModel
