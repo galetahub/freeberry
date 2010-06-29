@@ -1,0 +1,39 @@
+<div class="bot-bg">
+  <div class="filt-bl">
+    <%= link_to_function t('manage.model_filter.title'), "toggle_element('block_filter')", :class=>"dark-arr" %>
+    
+    <%= cookie_content_tag(:div, :id=>"block_filter") do %>
+      <%= form_for @search, :as => :search, :url=>manage_structure_posts_path(@structure.id), :html=>{:method=>:get, :id=>"form_filter"} do |f| %>
+        <table border="0" width="100%" cellspacing="0" cellpadding="0" class="filt">
+          <tbody>
+            <tr>
+              <td class="left"><%= f.label :title, t('activerecord.attributes.post.title') %></td>
+              <td><%= f.text_field :title, :class=>"text" %></td>
+            </tr>
+            <tr>
+              <td class="left"></td>
+              <td>
+                <div class="buts">
+                  <%= f.submit t('manage.model_filter.search'), :style=>"display:none;" %>
+                  <%= link_to_function content_tag(:span, t('manage.model_filter.search')), "$('#form_filter').submit()", :class=>"gr" %>                
+                  <%= link_to t('manage.model_filter.clear'), manage_structure_posts_path(@structure.id), :class=>"erase" %>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="sort">
+  	<label><%= t('manage.sort') %></label>
+    <div class="select"><%= link_to_function t("manage.posts.sort.#{@search.order_column}_#{@search.next_order_type}"), "SelectList.toggle(event)", :class=>"corn", :id=>'sort_select' %></div>
+    <div id='sort_select_list' class="select-list" style='display:none;'>
+      <%= link_to_sort(t('manage.posts.sort.created_at_desc'), @search_options.merge(:name=>"created_at", :order_type=>'desc')) %>
+      <%= link_to_sort(t('manage.posts.sort.created_at_asc'), @search_options.merge(:name=>"created_at", :order_type=>'asc')) %>
+      
+      <%= link_to_sort(t('manage.posts.sort.title_desc'), @search_options.merge(:name=>"title", :order_type=>'desc')) %>
+      <%= link_to_sort(t('manage.posts.sort.title_asc'), @search_options.merge(:name=>"title", :order_type=>'asc')) %>
+    </div>
+  </div>
+</div>

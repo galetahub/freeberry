@@ -1,0 +1,24 @@
+<% javascript "calendar/ui.datepicker-#{I18n.locale}" %>
+
+<div class="edit-cont">
+  <div class="inputs-bl">
+    <%= form.label "title" %>
+    <%= form.text_field "title", :class=>"text name" %>
+        
+    <%= form.label "content" %>
+    <%= form.cktext_area "content", {:width=>700} %>
+        
+    <%= form.label :published_at %>
+    <%= form.text_field :published_at %>
+    
+    <script type="text/javascript">
+	    $(function() {
+		    $('#post_published_at').datepicker({
+			    numberOfMonths: 2,
+			    showButtonPanel: true,
+			    dateFormat: 'dd.mm.yy'
+		    });
+	    });
+	  </script>
+  </div>
+</div>

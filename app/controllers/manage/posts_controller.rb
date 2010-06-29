@@ -37,7 +37,7 @@ class Manage::PostsController < Manage::BaseController
     end
     
     def make_filter
-      @search = ModelFilter.new(Post, :attributes=>[ :title, :kind ] )
+      @search = Freeberry::ModelFilter.new(Post, :attributes=>[ :title, :kind ] )
       @search.update_attributes(params[:search])
     end
 end

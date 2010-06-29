@@ -17,8 +17,6 @@ module Freeberry
           validates_presence_of :title, :content
 	
 	        before_save :make_date
-	
-	        scope :visible, where(:is_visible => true)
         end
       end
     end
