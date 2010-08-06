@@ -3,8 +3,14 @@ module Freeberry
   autoload :SystemSettings, 'freeberry/system_settings'
   autoload :MysqlUtils,     'freeberry/mysql_utils'
   autoload :Settingslogic,  'freeberry/settingslogic'
-  autoload :HeaderTools,    'freeberry/header_tools'  
-  autoload :Controllers,    'freeberry/controllers'
+  autoload :HeaderTools,    'freeberry/header_tools'
+  
+  # Controllers
+  module Controllers
+    autoload :AuthorizedSystem, 'freeberry/controllers/authorized_system'
+    autoload :HeadOptions,      'freeberry/controllers/head_options'
+    autoload :HelperTools,      'freeberry/controllers/helper_tools'
+  end
   
   # Models
   autoload :RoleType,      'freeberry/models/role_type'
@@ -20,4 +26,4 @@ module Freeberry
   autoload :Header,        'freeberry/models/header'
 end
 
-require 'freeberry/railtie' if defined?(Rails)
+require 'freeberry/railtie'
