@@ -27,10 +27,6 @@ module Freeberry
       rake_tasks do
         load "tasks/freeberry.rake"
       end
-      
-      generators do
-        require "generators/freeberry"
-      end
     end
   end
 end
