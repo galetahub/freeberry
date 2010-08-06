@@ -1,3 +1,3 @@
 class Page < ActiveRecord::Base
-  include Freeberry::Page
+  include Freeberry::Models::Page
 end

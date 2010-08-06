@@ -1,5 +1,5 @@
 class Comment < ActiveRecord::Base
-  include Freeberry::Comment
+  include Freeberry::Models::Comment
   
   using_access_control
   

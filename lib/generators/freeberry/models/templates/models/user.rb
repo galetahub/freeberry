@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  include Freeberry::User
+  include Freeberry::Models::User
   
   using_access_control
   
