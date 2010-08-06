@@ -6,7 +6,12 @@ module Freeberry
     end
     
     module ClassMethods
-    
+      
+      def values(column = 'id')
+        query = scoped.select(column)
+        connection.select_values(query.to_sql).map(&:to_i).uniq
+      end
+      
       # Check if database exists
 		  def database_exists?
 			  _options = configurations[Rails.env].dup
