@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{freeberry}
-  s.version = "0.0.1"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Igor Galeta", "Pavlo Galeta"]
@@ -37,6 +37,7 @@ Gem::Specification.new do |s|
      "config/locales/manage/uk.yml",
      "config/routes.rb",
      "lib/freeberry.rb",
+     "lib/freeberry/controllers.rb",
      "lib/freeberry/controllers/authorized_system.rb",
      "lib/freeberry/controllers/head_options.rb",
      "lib/freeberry/controllers/helper_tools.rb",
