@@ -1,4 +1,4 @@
-class StructureType < Freeberry::StructureType
+class StructureType < Freeberry::Models::StructureType
   define_enum do |builder|
     builder.member :page,     :object => new("page")
     builder.member :posts,    :object => new("posts")
