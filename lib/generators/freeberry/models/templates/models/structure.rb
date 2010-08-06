@@ -1,3 +1,3 @@
 class Structure < ActiveRecord::Base
-  include Freeberry::Structure
+  include Freeberry::Models::Structure
 end

@@ -14,5 +14,5 @@
 #
 
 class Role < ActiveRecord::Base
-  include Freeberry::Role
+  include Freeberry::Models::Role
 end

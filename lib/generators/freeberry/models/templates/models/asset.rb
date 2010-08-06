@@ -1,3 +1,3 @@
 class Asset < ActiveRecord::Base
-  include Freeberry::Asset
+  include Freeberry::Models::Asset
 end
