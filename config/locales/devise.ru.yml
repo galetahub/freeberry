@@ -33,7 +33,9 @@ ru:
       send_instructions: 'Вы получите письмо с инструкциями о том, как разблокировать ваш аккаунт в течение нескольких минут.'
       unlocked: 'Ваш аккаунт был успешно разблокирована. Теперь вы вошли в систему.'
     mailer:
-      user:
-        confirmation_instructions: 'Подтверждение регистрации'
-        reset_password_instructions: 'Обновления пароля'
-        unlock_instructions: 'Розблокировка аккаунта'
+      confirmation_instructions:
+        subject: 'Подтверждение регистрации'
+      reset_password_instructions:
+        subject: 'Обновления пароля'
+      unlock_instructions: 
+        subject: 'Розблокировка аккаунта'
