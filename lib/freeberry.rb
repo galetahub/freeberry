@@ -3,12 +3,8 @@ module Freeberry
   autoload :SystemSettings, 'freeberry/system_settings'
   autoload :MysqlUtils,     'freeberry/mysql_utils'
   autoload :Settingslogic,  'freeberry/settingslogic'
-  autoload :HeaderTools,    'freeberry/header_tools'
-  
-  # Controlelrs
-  autoload :AuthorizedSystem, 'freeberry/controllers/authorized_system'
-  autoload :HeadOptions,      'freeberry/controllers/head_options'
-  autoload :HelperTools,      'freeberry/controllers/helper_tools'
+  autoload :HeaderTools,    'freeberry/header_tools'  
+  autoload :Controllers,    'freeberry/controllers'
   
   # Models
   autoload :RoleType,      'freeberry/models/role_type'
