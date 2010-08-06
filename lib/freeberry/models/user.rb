@@ -14,8 +14,7 @@ module Freeberry
           has_many :roles, :dependent => :delete_all
           has_one :avatar, :as => :assetable, :dependent => :destroy
           
-          # TODO: fix error undefined method `admin' for RoleType:Class (NoMethodError)
-          scope :admins, joins(:roles).where(["roles.kind = ?", ::RoleType.admin.id])
+          scope :admins, joins(:roles).where(["`roles`.role_type = ?", ::RoleType.admin.id])
         end
       end
     end

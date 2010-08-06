@@ -1,6 +1,8 @@
+# encoding: utf-8
 require 'rake'
 require 'rake/testtask'
 require 'rake/rdoctask'
+require File.join(File.dirname(__FILE__), 'lib', 'freeberry', 'version')
 
 desc 'Default: run unit tests.'
 task :default => :test
@@ -20,4 +22,23 @@ Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.options << '--line-numbers' << '--inline-source'
   rdoc.rdoc_files.include('README')
   rdoc.rdoc_files.include('lib/**/*.rb')
+end
+
+begin
+  require 'jeweler'
+  Jeweler::Tasks.new do |gemspec|
+    gemspec.name = "freeberry"
+    gemspec.version = Freeberry::Version.dup
+    gemspec.summary = "Rails CRM System"
+    gemspec.description = "Freeberry is a Brainberry CRM System"
+    gemspec.email = "galeta.igor@gmail.com"
+    gemspec.homepage = "git://github.com/galetahub/freeberry.git"
+    gemspec.authors = ["Igor Galeta", "Pavlo Galeta"]
+    gemspec.files = FileList["[A-Z]*", "{app,config,lib}/**/*"]
+    gemspec.rubyforge_project = "freeberry"
+  end
+  
+  Jeweler::GemcutterTasks.new
+rescue LoadError
+  puts "Jeweler not available. Install it with: gem install jeweler"
 end
