@@ -1,4 +1,4 @@
-class RoleType < Freeberry::RoleType
+class RoleType < Freeberry::Models::RoleType
   # [:default, :redactor, :moderator, :admin]
   define_enum do |builder|
     builder.member :default,   :object => new("default")
