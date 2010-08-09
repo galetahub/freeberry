@@ -4,6 +4,7 @@ module Freeberry
   autoload :MysqlUtils,     'freeberry/mysql_utils'
   autoload :Settingslogic,  'freeberry/settingslogic'
   autoload :HeaderTools,    'freeberry/header_tools'
+  autoload :ModelFilter,    'freeberry/model_filter'
   
   # Controllers
   module Controllers
