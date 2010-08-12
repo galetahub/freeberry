@@ -1,29 +1,32 @@
 = Freeberry
-Brainberry Content Managment System
 
-== Dependents
+Brainberry Content Managment System
+For more instruction see {Wiki}[http://wiki.github.com/galetahub/freeberry].
+
+== Install
+
+=== Dependents
+
 Plugins:
+
   rails plugin install git://github.com/galetahub/enum_field.git
   rails plugin install git://github.com/galetahub/awesome_nested_set.git
   rails plugin install git://github.com/galetahub/salty_slugs.git
   rails plugin install git://github.com/galetahub/auto_html.git
+  rails plugin install git://github.com/galetahub/attach_file_field.git  
+
+In your Gemfile:
   
-  rails plugin install git://github.com/galetahub/attach_file_field.git
+  gem "mime-types", :require => 'mime/types'
+  gem "ckeditor", :git => 'git://github.com/galetahub/rails-ckeditor.git', :branch => 'rails3'
+  gem "will_paginate", :git => 'git://github.com/mislav/will_paginate.git', :branch => 'rails3'
+  gem "freeberry", :git => "git://github.com/galetahub/freeberry.git"
+
+=== Generators
+
+Plugin attach_file_field wants generate assets:
   rails generate attach_file_field
 
-Gems:
-  gem 'paperclip'
-  gem 'will_paginate'
-  gem 'warden'
-  gem 'devise'
-  gem 'nokogiri'
-  gem 'declarative_authorization'
-  gem 'ckeditor'
-  gem "mime-types", :require => 'mime/types'
-  gem 'inherited_resources'
-  gem 'haddock'
-
-== Install
 Devise (http://github.com/plataformatec/devise)
   rails generate devise:install
 
@@ -34,18 +37,25 @@ Ckeditor (http://github.com/galetahub/rails-ckeditor)
 Freeberry
   rails generate freeberry:base
   rails generate freeberry:models
-  
+
+=== Configuration
+
+Create yml files:
   cp config/application.yml.sample config/application.yml
   cp config/database.yml.sample config/database.yml
-  
+
+Create database and load seed data:
+  rake db:create
   rake db:seed
-  rake db:mirate
+  rake db:migrate
 
 In config/application.rb:
-  config.load_paths += %W( #{config.root}/app/models/defaults )
+  config.autoload_paths += %W( #{config.root}/app/models/defaults )
 
 == Usage
+
 === MysqlUtils
+
   * database_exists?
   * truncate_table
   * disable_keys
@@ -53,18 +63,13 @@ In config/application.rb:
   * with_keys_disabled
 
 === Settingslogic
+
   cass SystemSettings < Freeberry::Settingslogic
     source Rails.root.join("config", "application.yml")
   end
 
-== TODO
-1. Generators
-  - default routes
-
-Example
-=======
+== Example
 
 Example goes here.
-
 
 Copyright (c) 2010 Brainberry, released under the MIT license
