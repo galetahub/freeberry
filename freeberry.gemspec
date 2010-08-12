@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Igor Galeta", "Pavlo Galeta"]
-  s.date = %q{2010-08-09}
+  s.date = %q{2010-08-12}
   s.description = %q{Freeberry is a Brainberry CRM System}
   s.email = %q{galeta.igor@gmail.com}
   s.extra_rdoc_files = [
@@ -304,9 +304,30 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<warden>, [">= 0.10.7"])
+      s.add_runtime_dependency(%q<devise>, [">= 1.1.1"])
+      s.add_runtime_dependency(%q<paperclip>, [">= 2.3.3"])
+      s.add_runtime_dependency(%q<nokogiri>, [">= 1.4.3.1"])
+      s.add_runtime_dependency(%q<declarative_authorization>, [">= 0.5"])
+      s.add_runtime_dependency(%q<inherited_resources>, [">= 1.1.2"])
+      s.add_runtime_dependency(%q<haddock>, [">= 0.2.2"])
     else
+      s.add_dependency(%q<warden>, [">= 0.10.7"])
+      s.add_dependency(%q<devise>, [">= 1.1.1"])
+      s.add_dependency(%q<paperclip>, [">= 2.3.3"])
+      s.add_dependency(%q<nokogiri>, [">= 1.4.3.1"])
+      s.add_dependency(%q<declarative_authorization>, [">= 0.5"])
+      s.add_dependency(%q<inherited_resources>, [">= 1.1.2"])
+      s.add_dependency(%q<haddock>, [">= 0.2.2"])
     end
   else
+    s.add_dependency(%q<warden>, [">= 0.10.7"])
+    s.add_dependency(%q<devise>, [">= 1.1.1"])
+    s.add_dependency(%q<paperclip>, [">= 2.3.3"])
+    s.add_dependency(%q<nokogiri>, [">= 1.4.3.1"])
+    s.add_dependency(%q<declarative_authorization>, [">= 0.5"])
+    s.add_dependency(%q<inherited_resources>, [">= 1.1.2"])
+    s.add_dependency(%q<haddock>, [">= 0.2.2"])
   end
 end
 
