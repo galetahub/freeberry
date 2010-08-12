@@ -3,13 +3,13 @@ class Manage::PostsController < Manage::BaseController
   
   belongs_to :structure
   
-  before_filter :make_filter, :only=>[:index]
+  before_filter :make_filter, :only => [:index]
   
   respond_to :html, :xml, :json
   defaults :route_prefix => 'manage'
-  actions :all, :except => [ :show ]
+  actions :all, :except => [:show]
   
-  cache_sweeper :post_sweeper, :only=>[:create, :update, :destroy]
+  cache_sweeper :post_sweeper, :only => [:create, :update, :destroy]
   
   def create
     create!{ manage_structure_posts_path(@structure.id) }

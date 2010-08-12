@@ -3,7 +3,7 @@ class Manage::PagesController < Manage::BaseController
   
   respond_to :html, :xml
   
-  cache_sweeper :page_sweeper, :only=>[:create, :update, :destroy]
+  cache_sweeper :page_sweeper, :only => [:create, :update, :destroy]
   
   # GET /manage/structures/1/page/edit
   def edit

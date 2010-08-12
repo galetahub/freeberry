@@ -1,8 +1,6 @@
 class Manage::AssetsController < Manage::BaseController
-  skip_before_filter :verify_authenticity_token, :only=>[:create, :destroy]
-  
-  before_filter :find_klass, :only=>[:create]
-  before_filter :find_asset, :only=>[:destroy]
+  before_filter :find_klass, :only => [:create]
+  before_filter :find_asset, :only => [:destroy]
   
   respond_to :html, :xml
   
