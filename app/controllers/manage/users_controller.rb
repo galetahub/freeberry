@@ -27,46 +27,26 @@ class Manage::UsersController < Manage::BaseController
   
   # POST /manage/users/1/activate
   def activate
-    @user.confirm!
-    flash[:success] = I18n.t('flash.manage.users.update.success')
-    
-    respond_to do |format|
-      format.html { redirect_to manage_users_path }
-      format.xml { head :ok }
-    end
+    @user.confirm!    
+    respond_with(@user, :location => manage_users_path)
   end
   
   # POST /manage/users/1/suspend
   def suspend
     @user.suspend! 
-    flash[:success] = I18n.t('flash.manage.users.update.success')
-    
-    respond_to do |format|
-      format.html { redirect_to manage_users_path }
-      format.xml { head :ok }
-    end
+    respond_with(@user, :location => manage_users_path)
   end
 
   # POST /manage/users/1/unsuspend
   def unsuspend
-    @user.unsuspend! 
-    flash[:success] = I18n.t('flash.manage.users.update.success')
-    
-    respond_to do |format|
-      format.html { redirect_to manage_users_path }
-      format.xml { head :ok }
-    end
+    @user.unsuspend!
+    respond_with(@user, :location => manage_users_path)
   end
 
   # POST /manage/users/1/delete
   def delete
     @user.delete!
-    flash[:success] = I18n.t('flash.manage.users.update.success')
-    
-    respond_to do |format|
-      format.html { redirect_to manage_users_path }
-      format.xml { head :ok }
-    end
+    respond_with(@user, :location => manage_users_path)
   end
   
   protected

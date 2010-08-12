@@ -22,7 +22,7 @@ module Freeberry
         end
         
         def permission_denied
-          flash[:error] = t(:access_denied, :scope => [:flash, :users])
+          flash[:error] = I18n.t(:access_denied, :scope => [:flash, :users])
           
           respond_to do |format|
             format.html { redirect_to new_session_path(:user) }

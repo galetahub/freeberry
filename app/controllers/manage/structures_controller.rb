@@ -23,21 +23,11 @@ class Manage::StructuresController < Manage::BaseController
   end
   
   # POST /manage/structures/1/move
-  # POST /manage/structures/1/move.js
   def move
     @structure = Structure.find(params[:id])
+    @structure.move_by_direction(params[:direction])
     
-    respond_to do |format|
-    	if @structure.move_by_direction(params[:direction])
-        format.html { redirect_to manage_structures_path }
-        format.xml { head :ok }
-        format.js { head :ok }
-      else     	
-        format.html { render :action => "new" }
-        format.xml { render :xml => @structure.errors, :status => :unprocessable_entity }
-        format.js { head :unprocessable_entity }
-      end
-    end
+    respond_with(@structure, :location => manage_structures_path)
   end
   
   protected

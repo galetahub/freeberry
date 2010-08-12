@@ -42,6 +42,7 @@ begin
     gemspec.add_dependency('paperclip', '>= 2.3.3')
     gemspec.add_dependency('nokogiri', '>= 1.4.3.1')
     gemspec.add_dependency('declarative_authorization', '>= 0.5')
+    gemspec.add_dependency('responders', '>= 0.6.2')
     gemspec.add_dependency('inherited_resources', '>= 1.1.2')
     gemspec.add_dependency('haddock', '>= 0.2.2')
   end

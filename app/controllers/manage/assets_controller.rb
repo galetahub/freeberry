@@ -4,7 +4,9 @@ class Manage::AssetsController < Manage::BaseController
   before_filter :find_klass, :only=>[:create]
   before_filter :find_asset, :only=>[:destroy]
   
-  # POST /manage/assets.xml
+  respond_to :html, :xml
+  
+  # POST /manage/assets
   def create
     @asset ||= @klass.new(params[:asset])
     
@@ -13,25 +15,22 @@ class Manage::AssetsController < Manage::BaseController
 		@asset.guid = params[:guid]
   	@asset.data = params[:data_file]
   	@asset.user = current_user
+    @asset.save
     
-    if @asset.save
-      render :xml => @asset.to_xml
-    else
-      render :xml => @asset.errors, :status => :unprocessable_entity
-    end
+    respond_with(@asset)
   end
   
   # DELETE /manage/assets/1
   def destroy
     @asset.destroy
     
-    respond_to do |format|
+    respond_with(@asset) do |format|
       format.html { head :ok }
-      format.xml { head :ok }
     end
   end
   
-  private
+  protected
+  
     def find_asset
       @asset = Asset.find(params[:id])  
     end
