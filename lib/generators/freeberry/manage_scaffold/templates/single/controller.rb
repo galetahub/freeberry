@@ -28,7 +28,7 @@ class Manage::<%= controller_class_name %>Controller < Manage::BaseController
     end
     
     def make_filter
-      @search = ModelFilter.new(<%= class_name %>, :attributes=>[ <%= model.attributes.keys.map{ |a| ":#{a}" }.join(', ') %> ] )
+      @search = Freeberry::ModelFilter.new(<%= class_name %>, :attributes=>[ <%= model.attributes.keys.map{ |a| ":#{a}" }.join(', ') %> ] )
       @search.update_attributes(params[:search])
     end
 end

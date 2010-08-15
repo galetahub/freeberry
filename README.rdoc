@@ -68,6 +68,14 @@ In config/application.rb:
     source Rails.root.join("config", "application.yml")
   end
 
+=== Generators
+
+Manage scaffold:
+
+  rails generate freeberry:manage_scaffold ModelName
+
+  rails generate freeberry:manage_scaffold ModelName --parent=ParentModel
+
 == Example
 
 Example goes here.
