@@ -33,37 +33,6 @@ ru:
         description_ru: "Описание страницы <span>(рус.)</span>"
         description_en: "Описание страницы <span>(eng.)</span>"
       
-      video:
-        title: "Название"
-        title_uk: "Название <span>(укр.)</span>"
-        title_ru: "Название <span>(рус.)</span>"
-        tag_list: "Теги"
-        is_visible: "Отображать?"
-        artist_id: "Артист"
-        video_cover: "Картинка"
-        rating: "Рейтинг"
-        is_accessible: "Пересчитать рейтинг"
-        genre_list: "Жанри"
-        user_id: "Пользователь"
-        votes_count: "Рейтинг"
-        comments_count: "Комментарии"
-        state: "Статус"
-        source: "Видео файл"
-        created_at: "Дата создания"
-        updated_at: "Дата обновления"
-        source_file_name: "Название файла"
-        source_file_size: "Размер файла"
-        id: "Номер"
-        source_content_type: "Тип видео"
-        is_captain_choice: "Выбор капитана Шейка"
-        previews_count: "Количество просмотров"
-        publicated_at: "Дата публикации"
-        notes: "Замечания"
-        cached_average_rating: "Рейтинг"
-        cached_total_reviews: "Количество голосов"
-        captcha: "Captcha"
-        weekly_winner: "Победитель недели"
-      
       post:
         title: "Название"
         title_ru: "Название <span>(рус.)</span>"
@@ -93,44 +62,6 @@ ru:
         remote_ip: "IP адрес"
         user_agent: "Версия браузера"
         message: "Сообщение"
-      
-      question:
-        body: "Вопрос"
-        title: "Вопрос"
-        answer: "Ответ"
-        is_visible: "Отображать?"
-      
-      cocktail:
-        title: "Название"
-        notes: "Описание"
-        is_visible: "Отображать?"
-        photo: "Фотография"
-      
-      track:
-        title: "Название"
-        position: "Позиция"
-        downloads_count: "Количество загрузок"
-        mp3: "Аудио файл"
-      
-      wallpaper:
-        title: "Название"
-        position: "Позиция"
-        picture: "Обложка"
-        images: "Файлы для загрузки"
-      
-      image:
-        resolution_id: "Разрешение экрана"
-        file: "Файл"
-      
-      review:
-        reviewer_type: "Тип голосовавшего"
-        reviewer_id: "Код голосовавшего"
-        rated_at: "Дата активации"
-        user_agent: "Browser"
-        state: "Статус"
-        ip_address: "IP"
-        email: "Email"
-        referrer: "Referrer"
               
   manage:
     title: "Система<br />управления"
@@ -252,67 +183,6 @@ ru:
         moderator: "Модератор"
         admin: "Aдминистратор"
         redactor: "Редактор"
-    
-    track:
-      downloads_count: "Количество загрузок"
-      mp3_path: "Аудио файл"
-    
-    
-    videos:
-      sort:
-        _: "-"
-        created_at_desc: "по дате по убыванию"
-        created_at_asc: "по дате по возрастанию"
-        title_desc: "по названию по убыванию"
-        title_asc: "по названию по возрастанию"
-        rating_desc: "по рейтингу по убыванию"
-        rating_asc: "по рейтингу по возрастанию"
-        votes_count_desc: "по рейтингу по убыванию"
-        votes_count_asc: "по рейтингу по возрастанию"
-        comments_count_desc: "по количеству комментариев по убыванию"
-        comments_count_asc: "по количеству комментариев по возрастанию"
-    
-    video:
-      user: "Пользователь"
-      state: "Статус"
-      flv_path: "Скачать"
-      comments_count: "Комментарии"
-      events: "Действия"
-      event_confirm: "Вы уверены?"
-      reviews: "График голосования"
-      cached_average_rating: "Рейтинг"
-      aasm_events:
-        convert: "В обработке"
-        converted: "Обробка завершена"
-        failed: "Ошибка при обработке"
-        publicate: "Публиковать"
-        restore: "На обработку"
-        hide: "Скрыть"
-        decline: "Отклонить"
-      aasm_states:
-        pending: "ожидает обработки"
-        converting: "на обработке"
-        converted: "готовая"
-        error: "ошибка"
-        publicated: "опубликовано"
-        hidden: "скрыта"
-        declined: "отклонена"
-    
-    questions:
-      sort:
-        _: "-"
-        created_at_desc: "по дате по убыванию"
-        created_at_asc: "по дате по возрастанию"
-        title_desc: "по названию по убыванию"
-        title_asc: "по названию по возрастанию"
-    
-    cocktails:
-      sort:
-        _: "-"
-        created_at_desc: "по дате по убыванию"
-        created_at_asc: "по дате по возрастанию"
-        title_desc: "по названию по убыванию"
-        title_asc: "по названию по возрастанию"
         
     tags:
       sort:
@@ -321,38 +191,6 @@ ru:
         created_at_asc: "по дате по возрастанию"
         name_desc: "по названию по убыванию"
         name_asc: "по названию по возрастанию"
-    
-    tracks:
-      sort:
-        _: "-"
-        created_at_desc: "по дате по убыванию"
-        created_at_asc: "по дате по возрастанию"
-        title_desc: "по названию по убыванию"
-        title_asc: "по названию по возрастанию"
-        position_desc: "по позиции по убыванию"
-        position_asc: "по позиции по возрастанию"
-        downloads_count_desc: "по загрузкам по убыванию"
-        downloads_count_asc: "по загрузкам по возрастанию"
-    
-    wallpapers:
-      images: "Файлы для загрузки"
-      add_image: "Добавить запись"
-      sort:
-        _: "-"
-        created_at_desc: "по дате по убыванию"
-        created_at_asc: "по дате по возрастанию"
-        title_desc: "по названию по убыванию"
-        title_asc: "по названию по возрастанию"
-        position_desc: "по позиции по убыванию"
-        position_asc: "по позиции по возрастанию"
-  
-    reviews:
-      sort:
-        _: "-"
-        created_at_desc: "по дате по убыванию"
-        created_at_asc: "по дате по возрастанию"
-        rated_at_desc: "по дате голоса по убыванию"
-        rated_at_asc: "по дате голоса по возрастанию"
       
   flash:
     manage:      

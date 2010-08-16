@@ -2,169 +2,76 @@ uk:
   activerecord:
     attributes:
       user:
-        name: "Ім'я"
+        name: "Ім&#39;я"
         email: "Email"
         password: "Пароль"
         password_confirmation: "Підтвердження пароля"
-        avatar: "Аватарка"
-        phone_number: "Номер телефону"
-        phone_mark_id: "Модель телефону"
-        phone_model_id: "Модель телефону"
+        avatar: "Аватарки"
+        birthday: "Дата народження"
+        city_name: "Місто"
+        about: "Про себе"
+        remember_me: "Запам&#39;ятати мене"
       
-      artist:
-        name: "Ім'я"
-        name_ru: "Ім'я <span>(рус.)</span>"
-        name_uk: "Ім'я <span>(укр.)</span>"
-        notes: "Короткий опис"
-        notes_ru: "Короткий опис <span>(рус.)</span>"
-        notes_uk: "Короткий опис <span>(укр.)</span>"
-        content: "Повний опис"
-        content_ru: "Повний опис <span>(рус.)</span>"
-        content_uk: "Повний опис <span>(укр.)</span>"
-        photo: "Фотографія"
-        is_visible: "Відображати?"
-        tag_list: "Теги"
-        funclub_url: "Фанклуб (посилання)"
-        site_url: "Сайт (посилання)"
-        is_accessible: "Перераховувати рейтинг"
-        rating: "Рейтинг"
-        genre_list: "Жанри"
-      
-      album:
+      structure:
         title: "Назва"
-        title_uk: "Назва <span>(укр.)</span>"
-        title_ru: "Назва <span>(рус.)</span>"
-        price: "Ціна"
-        tag_list: "Теги"
-        is_visible: "Відображати?"
-        artist_id: "Артист"
-        cover: "Картинка"
-        rating: "Рейтинг"
-        is_accessible: "Перераховувати рейтинг"
-      
-      video:
-        title: "Назва"
-        title_uk: "Назва <span>(укр.)</span>"
-        title_ru: "Назва <span>(рус.)</span>"
-        tag_list: "Теги"
-        is_visible: "Відображати?"
-        artist_id: "Артист"
-        video_cover: "Картинка"
-        rating: "Рейтинг"
-        is_accessible: "Перераховувати рейтинг"
-        genre_list: "Жанри"
-      
-      track:
-        title: "Назва"
-        kind: "Тип"
-        position: "Позиція"
-        release: "Release"
-        mp3: "MP3"
-        release_id: "Release"
-      
-      release:
-        cover: "Обкладинка"
-        title: "Назва"
-        title_ru: "Назва <span>(рус.)</span>"
+        title_ru: "Назва <span>(рос.)</span>"
         title_en: "Назва <span>(eng.)</span>"
-        notes: "Опис"
-        kind: "Тип"
-        notes_ru: "Опис <span>(рус.)</span>"
-        notes_en: "Опис <span>(eng.)</span>"
-        artist_id: "Артист"
+        parent_id: "Головна категорія"
+        is_visible: "Відображати?"
+        kind: "Тип сторінки"
+        redirect_url: "Перенаправлення (URL)"
+        position: "Позиція"
       
-      member:
-        shop_id: "Магазин"
-        bay_url: "Посилання на товар"
-      
-      shop:
-        name: "Назва"
-        name_ru: "Назва <span>(рус.)</span>"
-        name_en: "Назва <span>(eng.)</span>"
-        notes: "Опис"
-        notes_ru: "Опис <span>(рус.)</span>"
-        notes_en: "Опис <span>(eng.)</span>"
-        url: "Посилання"
-        image: "Логотип"
+      header:
+        title: "Заголовок сторінки"
+        title_ru: "Заголовок сторінки <span>(рос.)</span>"
+        title_en: "Заголовок сторінки <span>(eng.)</span>"
+        keywords: "Ключові слова"
+        keywords_ru: "Ключові слова <span>(рос.)</span>"
+        keywords_en: "Ключові слова <span>(eng.)</span>"
+        description: "Опис сторінки"
+        description_ru: "Опис сторінки <span>(рос.)</span>"
+        description_en: "Опис сторінки <span>(eng.)</span>"
       
       post:
         title: "Назва"
-        title_ru: "Назва <span>(рус.)</span>"
+        title_ru: "Назва <span>(рос.)</span>"
         title_en: "Назва <span>(eng.)</span>"
         content: "Зміст"
-        content_ru: "Зміст <span>(рус.)</span>"
+        content_ru: "Зміст <span>(рос.)</span>"
         content_en: "Зміст <span>(eng.)</span>"
-        created_at: "Дата/Час"
-        picture: "Картинка"
+        created_at: "Дата / Час"
+        picture: "Зображення"
       
       page:
         title: "Назва"
-        title_ru: "Назва <span>(рус.)</span>"
+        title_ru: "Назва <span>(рос.)</span>"
         title_en: "Назва <span>(eng.)</span>"
         content: "Зміст"
-        content_ru: "Зміст <span>(рус.)</span>"
+        content_ru: "Зміст <span>(рос.)</span>"
         content_en: "Зміст <span>(eng.)</span>"
-      
-      widget:
-        title_ru: "Назва <span>(рус.)</span>"
-        title_uk: "Назва <span>(укр.)</span>"
-        position: "Позиція"
-        kind: "Тип"
-        is_visible: "Відображати?"
-        sort_order: "Сортування"
-        genre_list: "Список жанрів"
-      
-      provider:
-        name: "Ім'я"
-        order_email: "Email для замовлень"
-        download_url: "Посилання для завантаження"
-        tech_email: "Email технічний"
-        order_url: "Посилання для замовлень"
-      
-      genre:
-        name_ru: "Назва <span>(рус.)</span>"
-        name_uk: "Назва <span>(укр.)</span>"
       
       tag:
         name: "Назва"
-      
-      song:
-        name: "Назва"
-        name_ru: "Назва <span>(рус.)</span>"
-        name_uk: "Назва <span>(укр.)</span>"
-        rating: "Рейтинг"
-        tag_list: "Теги"
-        genre_list: "Жанри"
-        album_id: "Альбом"
-        artist_id: "Артист"
-        movie_id: "Фільм"
-        songtext: "Текст пісні"
-        is_accessible: "Перерахувати рейтинг"
-        is_visible: "Відображати"
-        is_soundtrack: "Саундтрек"
-      
+     
       feedback:
-        name: "Ім'я"
+        name: "Ім&#39;я"
         email: "Email"
         kind: "Категорія"
         user_id: "Користувач"
         remote_ip: "IP адреса"
         user_agent: "Версія браузера"
         message: "Повідомлення"
-      
-      phone_mark:
-        name: "Назва"
-        position: "Позиція"
-        
+              
   manage:
-    title: "Система<br />управління"
-    go_site: "Перейти до сайту"
+    title: "Система <br /> управління"
+    go_site: "Перейти на сайт"
     exit: "Вихід"
     page_title: "Управління сайтом"
     site_edit: "Система управління"
-    root: "Перейти до сайту"
+    root: "Перейти на сайт"
     users: "Користувачі"
-    label_settings: "Налаштування"
+    label_settings: "Установки"
     structure: "Структура"
     new_structure: "Створити розділ"
     user_actions: "Дії"
@@ -173,7 +80,7 @@ uk:
     confirm_delete: "Ви дійсно хочете видалити запис?"
     prev: "Попередня"
     next: "Наступна"
-    max_size: "Макс розм."
+    max_size: "Макс р."
     keywords: "Ключові слова"
     edit: "Редагувати"
     delete: "Видалити"
@@ -183,31 +90,26 @@ uk:
     update: "Оновити"
     sort: "Сортувати"
     pictures: "Фотографії"
+    download: "Завантажити"
     
     menu:
       structures: "Структура"
       users: "Користувачі"
       system_messages: "Системні повідомлення"
-      settings: "Налаштування"
+      settings: "Установки"
       other: "Інші"
       posts: "Новини"
-      artists: "Артисти"
-      shops: "Магазини"
-      releases: "Releases"
-      tracks: "Tracks"
-      providers: "Провайдери"
-      genres: "Жанри"
-      tags: "Теги"
-      widgets: "Widgets"
-      songs: "Треки (Пісні)"
-      albums: "Альбоми"
-      videos: "Відео"
-      feedbacks: "Зворотній звязок"
+      categories: "Категорії"
       statisticts: "Статистика"
-      phone_marks: "Марки телефонів"
+      videos: "Конкурсне відео"
+      questions: "Питання та відповіді"
+      cocktails: "Shake в банку"
+      tracks: "Музика"
+      wallpapers: "Шпалери"
+      reviews: "голоси"
     
     settings:
-      title: "Налаштування"
+      title: "Установки"
       mailer: "Пошта"
       route: "Домен"
       contacts: "Контакти"
@@ -215,7 +117,7 @@ uk:
     locale:
       ru: "російська"
       en: "англійська"
-      uk: "українська"
+      uk: "український"
     
     model_filter: 
       title: "Фільтр даних"
@@ -245,23 +147,34 @@ uk:
       last_login_ip: "ip"
       email: "email"
       category: "категорія"
-      name: "Ім'я"
+      name: "Ім&#39;я"
       
       sort:
         _: "-"
         created_at_desc: "за датою за спаданням"
         created_at_asc: "за датою за зростанням"
-        name_desc: "по імені за спаданням"
-        name_asc: "по імені за зростанням"
+        name_desc: "за за іменем за спаданням"
+        name_asc: "на ім&#39;я за зростанням"
     
-    artists:
-      sort:
-        _: "-"
-        created_at_desc: "за датою за спаданням"
-        created_at_asc: "за датою за зростанням"
-        name_ru_desc: "по імені за спаданням"
-        name_ru_asc: "по імені за зростанням"
-      tracks: "Треки артиста"
+    structure:
+      kind:
+        page: "Текстова сторінка"
+        posts: "Блоги"
+        main: "Головна сторінка"
+        promo: "Конкурс"
+        lessons: "Приватні уроки"
+        faq: "Питання та відповіді"
+        shake: "Shake в банку"
+        downloads: "Downloads"
+        redirect: "Redirect"
+        tracks: "Музика"
+        wallpapers: "Шпалери"
+        group: "Група странічок"
+      
+      position:
+        default: "За замовчуванням"
+        menu: "Головне меню"
+        bottom: "Внизу"
     
     role:
       kind:
@@ -270,196 +183,44 @@ uk:
         moderator: "Модератор"
         admin: "Aдміністратор"
         redactor: "Редактор"
-    
-    track:
-      kind:
-        default: "Default"
-        promo: "Promo"
-        podcast: "Podcast"
-      
-      position:
-        default: "Default"
-        main_page: "Головна сторінка"
-    
-    tracks:
-      sort:
-        _: "-"
-        created_at_desc: "за датою за спаданням"
-        created_at_asc: "за датою за зростанням"
-        title_desc: "за назвою за спаданням"
-        title_asc: "за назвою за зростанням"
-    
-    feedbacks:
-      sort:
-        _: "-"
-        created_at_desc: "за датою за спаданням"
-        created_at_asc: "за датою за зростанням"
-        name_desc: "за назвою за спаданням"
-        name_asc: "за назвою за зростанням"
-    
-    albums:
-      sort:
-        _: "-"
-        created_at_desc: "за датою за спаданням"
-        created_at_asc: "за датою за зростанням"
-        title_ru_desc: "за назвою за спаданням"
-        title_ru_asc: "за назвою за зростанням"
-    
-    videos:
-      sort:
-        _: "-"
-        created_at_desc: "за датою за спаданням"
-        created_at_asc: "за датою за зростанням"
-        title_ru_desc: "за назвою за спаданням"
-        title_ru_asc: "за назвою за зростанням"
-        rating_desc: "за рейтингом за спаданням"
-        rating_asc: "за рейтингом за зростанням"
-    
-    shops:
-      sort:
-        _: "-"
-        created_at_desc: "за датою за спаданням"
-        created_at_asc: "за датою за зростанням"
-        name_desc: "по імені за спаданням"
-        name_asc: "по імені за зростанням"
-    
-    posts:
-      sort:
-        _: "-"
-        created_at_desc: "за датою за спаданням"
-        created_at_asc: "за датою за зростанням"
-        title_desc: "за назвою за спаданням"
-        title_asc: "за назвою за зростанням"
-    
-    releases:
-      members: "Магазины продажу"
-      add_member: "Додати магазин"
-      artist: "Артист"
-      title: "Release"
-      
-      sort:
-        _: "-"
-        created_at_desc: "за датою за спаданням"
-        created_at_asc: "за датою за зростанням"
-        title_desc: "за назвою за спаданням"
-        title_asc: "за назвою за зростанням"
-
-    artist:
-      songs: "пісні"
-      albums: "альбоми"
-      videos: "відео"
-    
-    widgets:
-      sort:
-        _: "-"
-        created_at_desc: "за датою за спаданням"
-        created_at_asc: "за датою за зростанням"
-        title_ru_desc: "за назвою за спаданням"
-        title_ru_asc: "за назвою за зростанням"
-        sort_order_desc: "за номером за спаданням"
-        sort_order_asc: "за номером за зростанням"
         
-      kind:
-        artists: "Артисти"
-        albums: "Альбоми"
-        songs: "Пісні"
-        videos: "Відео"
-        track: "Треки"
-        polymelody: "Полімелодії"
-        realtone: "Реалтони"
-        goodok: "Гудок"
-      
-      position:
-        default: "Тільки головна"
-        internal: "На всіх сторінках"
-    
-    provider:
-      priorities: "Пріоритети"
-    
-    providers:
-      sort:
-        _: "-"
-        created_at_desc: "за датою за спаданням"
-        created_at_asc: "за датою за зростанням"
-        name_desc: "за назвою за спаданням"
-        name_asc: "за назвою за зростанням"
-    
-    genres:
-      sort:
-        _: "-"
-        created_at_desc: "за датою за спаданням"
-        created_at_asc: "за датою за зростанням"
-        name_ru_desc: "за назвою за спаданням"
-        name_ru_asc: "за назвою за зростанням"
-    
     tags:
       sort:
-        _: "_"
-        created_at_desc: "за датою за спаданням"
-        created_at_asc: "за датою за зростанням"
-        name_desc: "за назвою за спаданням"
-        name_asc: "за назвою за зростанням"
-    
-    content:
-      kind:
-        track: "Трек"
-        track_pc: "Трек для PC"
-        polymelody: "Полімелодія"
-        realtone: "Реалтон"
-        goodok: "Гудок"
-        video: "Відео"
-        video_pc: "Відео для PC"
-        sountrack: "Саундтрек"
-    
-    songs:
-      sort:
-        _: "-"
-        created_at_desc: "за датою за спаданням"
-        created_at_asc: "за датою за зростанням"
-        name_ru_desc: "за назвою за спаданням"
-        name_ru_asc: "за назвою за зростанням"
-        rating_desc: "за рейтингом за спаданням"
-        rating_asc: "за рейтингом за зростанням"
-    
-    phone_marks:
-      sort:
         _: "-"
         created_at_desc: "за датою за спаданням"
         created_at_asc: "за датою за зростанням"
         name_desc: "за назвою за спаданням"
         name_asc: "за назвою за зростанням"
-        position_desc: "за позицією за спаданням"
-        position_asc: "за позицією за зростанням"
       
   flash:
     manage:      
       actions:
         create:
-          success: "Запис успішно створено"
-          failure: "Виникли помилки під час збереження даних"
+          success: "Запис успішно створена"
+          failure: "Виникли помилки при збереженні даних"
         update:
           success: "Запис успішно оновлено"
           failure: "Виникли помилки при оновленні даних"
         destroy:
           success: "Запис успішно видалено"
-          failure: "Виникли помилки під час видалення даних"
+          failure: "Виникли помилки при видаленні даних"
         
       users:
         create:
-          success: "Користувача успішно створено"
-          failure: "Виникли помилки під час створення користувача"
+          success: "Користувач успішно створений"
+          failure: "Виникли помилки при створенні користувача"
         update:
           success: "Дані користувача успішно оновлено"
       
       settings:
         create:
-          success: "Налаштування успішно оновлені"
-          failure: "Виникли помилки під час збереження даних"
+          success: "Параметри успішно оновлені"
+          failure: "Виникли помилки при збереженні даних"
       
       pages:
         create:
-          success: "Сторінка успішно збережена"
-          failure: "Виникли помилки під час збереження даних"
+          success: "Сторінка успішно збережено"
+          failure: "Виникли помилки при збереженні даних"
         update:
-          success: "Сторінка успішно збережена"
-          failure: "Виникли помилки під час збереження даних"
+          success: "Сторінка успішно збережено"
+          failure: "Виникли помилки при збереженні даних"
