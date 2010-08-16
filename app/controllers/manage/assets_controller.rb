@@ -15,7 +15,10 @@ class Manage::AssetsController < Manage::BaseController
   	@asset.user = current_user
     @asset.save
     
-    respond_with(@asset)
+    respond_with(@asset) do |format|
+      format.html { head :ok }
+      format.xml { render :xml => @asset.to_xml }
+    end
   end
   
   # DELETE /manage/assets/1
