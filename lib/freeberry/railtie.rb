@@ -6,10 +6,13 @@ module Freeberry
   class Engine < ::Rails::Engine   
     config.before_initialize do
       ActiveSupport::XmlMini.backend = 'Nokogiri'
-      I18n::Backend::Simple.send(:include, I18n::Backend::Pluralization)
+      
+      Responders::FlashResponder.flash_keys = [ :success, :failure ]
+      InheritedResources.flash_keys = [ :success, :failure ]
         
-      config.i18n.load_path += Dir[File.join(File.dirname(__FILE__), "../../config", 'locales', 'defaults', '*.{rb,yml}').to_s]
-      config.i18n.load_path += Dir[File.join(File.dirname(__FILE__), "../../config", 'locales', 'manage', '*.{rb,yml}').to_s]
+      config.i18n.load_path += Dir[File.join(File.dirname(__FILE__), "../../config", 'locales', '**', '*.{rb,yml}').to_s]
+      
+      I18n::Backend::Simple.send(:include, I18n::Backend::Pluralization)
       
       ActiveSupport.on_load :active_record do
         ActiveRecord::Base.send :include, Freeberry::MysqlUtils

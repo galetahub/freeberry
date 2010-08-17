@@ -2,7 +2,7 @@ uk:
   activerecord:
     attributes:
       user:
-        name: "Ім&#39;я"
+        name: "Ім'я"
         email: "Email"
         password: "Пароль"
         password_confirmation: "Підтвердження пароля"
@@ -10,7 +10,7 @@ uk:
         birthday: "Дата народження"
         city_name: "Місто"
         about: "Про себе"
-        remember_me: "Запам&#39;ятати мене"
+        remember_me: "Запам'ятати мене"
       
       structure:
         title: "Назва"
@@ -55,7 +55,7 @@ uk:
         name: "Назва"
      
       feedback:
-        name: "Ім&#39;я"
+        name: "Ім'я"
         email: "Email"
         kind: "Категорія"
         user_id: "Користувач"
@@ -147,14 +147,14 @@ uk:
       last_login_ip: "ip"
       email: "email"
       category: "категорія"
-      name: "Ім&#39;я"
+      name: "Ім'я"
       
       sort:
         _: "-"
         created_at_desc: "за датою за спаданням"
         created_at_asc: "за датою за зростанням"
         name_desc: "за за іменем за спаданням"
-        name_asc: "на ім&#39;я за зростанням"
+        name_asc: "на ім'я за зростанням"
     
     structure:
       kind:

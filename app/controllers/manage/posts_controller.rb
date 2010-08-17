@@ -30,7 +30,7 @@ class Manage::PostsController < Manage::BaseController
     end
     
     def collection
-      options = { :page => params[:page], :per_page => 20, :include=>[:picture] }
+      options = { :page => params[:page], :per_page => 20 }
       options.update @search.filter
       
       @posts ||= end_of_association_chain.paginate(:all, options)
