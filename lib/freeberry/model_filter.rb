@@ -47,9 +47,11 @@ module Freeberry
       @order_by = extract_order(options)
     end
     
-    def method_missing(method_name, *args, &block)
-      if @attributes.include?(method_name.to_sym)
-        @raw_values[method_name]
+    def method_missing(method, *args, &block)
+      method_name = method.to_s.include?('_before_type_cast') ? method.to_s.split('_')[0] : method
+      
+      if method_name && @attributes.include?(method_name.to_sym)
+        @raw_values[method_name.to_sym]
       else
         super
       end
