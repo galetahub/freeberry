@@ -13,11 +13,11 @@
 </head>
 <body>
   <div class="main">
-    <%= render :partial=>"shared/manage_head" %>
+    <%= render :partial => "shared/manage/head" %>
     <div class="main-frame">
       <div class="struct-bl">
         <div id="manage_container" class="bot-bg">
-          <%= render :partial=>'shared/manage_notice' if flash %>
+          <%= render :partial => 'shared/manage/notice' if flash %>
           <%= yield %>
         </div>
       </div>
