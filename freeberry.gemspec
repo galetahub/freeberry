@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{freeberry}
-  s.version = "0.1.6"
+  s.version = "0.1.7"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Igor Galeta", "Pavlo Galeta"]
-  s.date = %q{2010-08-12}
+  s.date = %q{2010-08-26}
   s.description = %q{Freeberry is a Brainberry CRM System}
   s.email = %q{galeta.igor@gmail.com}
   s.extra_rdoc_files = [
@@ -32,6 +32,7 @@ Gem::Specification.new do |s|
      "config/locales/defaults/uk.yml",
      "config/locales/devise.en.yml",
      "config/locales/devise.ru.yml",
+     "config/locales/devise.uk.yml",
      "config/locales/manage/en.yml",
      "config/locales/manage/ru.yml",
      "config/locales/manage/uk.yml",
@@ -235,11 +236,11 @@ Gem::Specification.new do |s|
      "lib/generators/freeberry/base/templates/views/manage/users/index.html.erb",
      "lib/generators/freeberry/base/templates/views/manage/users/new.html.erb",
      "lib/generators/freeberry/base/templates/views/manage/users/show.html.erb",
-     "lib/generators/freeberry/base/templates/views/shared/_manage_head.html.erb",
-     "lib/generators/freeberry/base/templates/views/shared/_manage_locale.html.erb",
-     "lib/generators/freeberry/base/templates/views/shared/_manage_notice.html.erb",
-     "lib/generators/freeberry/base/templates/views/shared/_manage_panel.erb",
-     "lib/generators/freeberry/base/templates/views/shared/_message_notice.html.erb",
+     "lib/generators/freeberry/base/templates/views/shared/_notice.html.erb",
+     "lib/generators/freeberry/base/templates/views/shared/manage/_head.html.erb",
+     "lib/generators/freeberry/base/templates/views/shared/manage/_locale.html.erb",
+     "lib/generators/freeberry/base/templates/views/shared/manage/_notice.html.erb",
+     "lib/generators/freeberry/base/templates/views/shared/manage/_panel.html.erb",
      "lib/generators/freeberry/manage_scaffold/USAGE",
      "lib/generators/freeberry/manage_scaffold/manage_scaffold_generator.rb",
      "lib/generators/freeberry/manage_scaffold/templates/multiplay/controller.rb",
