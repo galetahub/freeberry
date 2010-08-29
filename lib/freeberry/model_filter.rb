@@ -48,10 +48,11 @@ module Freeberry
     end
     
     def method_missing(method, *args, &block)
-      method_name = method.to_s.include?('_before_type_cast') ? method.to_s.split('_')[0] : method
+      match_data = method.to_s.match(/^(.+)_before_type_cast$/)
+      method_name = match_data ? match_data[1].to_sym : method.to_sym
       
-      if method_name && @attributes.include?(method_name.to_sym)
-        @raw_values[method_name.to_sym]
+      if @attributes.include?(method_name)
+        @raw_values[method_name]
       else
         super
       end
