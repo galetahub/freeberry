@@ -51,7 +51,7 @@ module Freeberry
       match_data = method.to_s.match(/^(.+)_before_type_cast$/)
       method_name = (match_data ? match_data[1] : method).to_sym
       
-      if method_name && @attributes.include?(method_name)
+      if @attributes.include?(method_name)
         @raw_values[method_name]
       else
         super
