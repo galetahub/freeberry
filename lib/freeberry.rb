@@ -1,10 +1,13 @@
 # encoding: utf-8
+require 'freeberry/core_ext'
+
 module Freeberry
   autoload :SystemSettings, 'freeberry/system_settings'
   autoload :MysqlUtils,     'freeberry/mysql_utils'
   autoload :Settingslogic,  'freeberry/settingslogic'
   autoload :HeaderTools,    'freeberry/header_tools'
   autoload :ModelFilter,    'freeberry/model_filter'
+  autoload :Transliteration,'freeberry/transliteration'
   
   # Controllers
   module Controllers

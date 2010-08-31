@@ -1,5 +1,4 @@
 class PositionType < Freeberry::Models::PositionType
-  # [:none, :menu, :bottom]
   define_enum do |builder|
     builder.member :default,  :object => new("default")
     builder.member :menu,     :object => new("menu")

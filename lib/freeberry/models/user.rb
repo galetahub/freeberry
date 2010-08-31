@@ -16,6 +16,7 @@ module Freeberry
             has_one :avatar, :as => :assetable, :dependent => :destroy
             
             scope :admins, joins(:roles).where(["`roles`.role_type = ?", ::RoleType.admin.id])
+            scope :with_role, proc {|role| joins(:roles).where(["`roles`.role_type = ?", role.id]) }
           end
         end
       end
