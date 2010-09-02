@@ -41,7 +41,7 @@ module Freeberry
             if v.to_i == 0
               self.roles.delete(r) unless r.nil?
             else
-              r ||= self.roles.build(:role_type => RoleType.find(k.to_i))
+              r ||= self.roles.build(:role_type => ::RoleType.find(k.to_i))
             end
           end
         end
