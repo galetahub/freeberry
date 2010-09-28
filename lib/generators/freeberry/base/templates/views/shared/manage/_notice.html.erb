@@ -1,6 +1,6 @@
 <% flash.each do |k, v| %>
 	<%= content_tag(:div, :id=>"message_#{k}", :class=>"message #{k}") do %>
-		<%= link_to_function(image_tag("manage/ico_del.gif", :alt=>t('label.close')), "$(this).parent('div.message').hide()", :class=>"close") %>
+		<%= link_to_function(image_tag("manage/ico_del.gif", :title=>t('label.close')), "$(this).parent('div.message').hide()", :class=>"close") %>
     <%= v %>
   <% end %>
   <script type='text/javascript'>window.setTimeout("fade_flash()", 15000);</script>

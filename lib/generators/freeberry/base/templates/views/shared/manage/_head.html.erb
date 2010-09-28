@@ -4,9 +4,17 @@
 	
   <div class="main-menu">
     <ul>
-      <li><%= link_to_unless_current_span2 t('manage.menu.structures'), manage_structures_path %></li>
-      <li><%= link_to_unless_current_span2 t('manage.menu.users'), manage_users_path %></li>
-      <li><%= link_to_unless_current_span2 t('manage.menu.settings'), manage_settings_path %></li>
+      <% permitted_to? :read, :manage_structures do %>
+        <li><%= link_to_unless_current_span2 t('manage.menu.structures'), manage_structures_path %></li>
+      <% end %>
+      
+      <% permitted_to? :read, :manage_users do %>
+        <li><%= link_to_unless_current_span2 t('manage.menu.users'), manage_users_path %></li>
+      <% end %>
+      
+      <% permitted_to? :read, :manage_settings do %>
+        <li><%= link_to_unless_current_span2 t('manage.menu.settings'), manage_settings_path %></li>
+      <% end %>
     </ul>
   </div>
     

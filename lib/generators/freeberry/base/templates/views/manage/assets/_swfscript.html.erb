@@ -50,7 +50,7 @@
 				},
 				
 				// Debug settings
-				debug: <%= RAILS_ENV == 'development' ? 'true' : 'false' %>
+				debug: <%= Rails.env.development? ? 'true' : 'false' %>
 			});
       
 		};

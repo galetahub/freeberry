@@ -1,23 +1,27 @@
-<%= content_tag(:div, :id=>"structure_#{structure.id}", :class=>"row-container") do %>
+<%= content_tag(:div, :id=>dom_id(structure), :class=>"row-container") do %>
   <div class="gray-row">
     <div class="r-corn">
       <%= link_to structure.title, edit_structure_record_path(structure), :class=>(structure.descendants_count.zero? ? "dark-text" : "dark-arr"), :id=>"a#{structure.id}" %>
       <div class="act-bl" style="display:none;">
-        <%= link_to image_tag("manage/ico_down.gif", :alt=>t('manage.position.down'), :title=>t('manage.position.down')), 
-            move_manage_structure_path(:id => structure.id, :direction => 'down'),
-            :remote => true,
-            :class=>"icons move_down" %>
-            
-        <%= link_to image_tag("manage/ico_up.gif", :alt=>t('manage.position.up'), :title=>t('manage.position.up')), 
-            move_manage_structure_path(:id => structure.id, :direction => 'up'),
-            :remote => true,
-            :class=>"icons move_up" %>
+        <% permitted_to? :update, structure, :context => :manage_structures do %>
+          <%= link_to image_tag("manage/ico_down.gif", :alt=>t('manage.position.down'), :title=>t('manage.position.down')), 
+              move_manage_structure_path(:id => structure.id, :direction => 'down'),
+              :remote => true,
+              :class=>"icons move_down" %>
+              
+          <%= link_to image_tag("manage/ico_up.gif", :alt=>t('manage.position.up'), :title=>t('manage.position.up')), 
+              move_manage_structure_path(:id => structure.id, :direction => 'up'),
+              :remote => true,
+              :class=>"icons move_up" %>
+          
+          <%= link_to image_tag("manage/ico_edit.gif", :alt=>t('manage.edit'), :title=>t('manage.edit')), edit_structure_record_path(structure), :class=>"icons" %>
+          <%= link_to image_tag("manage/ico_settings.gif", :alt=>t('manage.label_settings'), :title=>t('manage.label_settings')), edit_manage_structure_path(:id=>structure.id), :class=>"icons" %>
+        <% end %>
         
-        <%= link_to image_tag("manage/ico_edit.gif", :alt=>t('manage.edit'), :title=>t('manage.edit')), edit_structure_record_path(structure), :class=>"icons" %>
-        <%= link_to image_tag("manage/ico_settings.gif", :alt=>t('manage.label_settings'), :title=>t('manage.label_settings')), edit_manage_structure_path(:id=>structure.id), :class=>"icons" %>
-
-        <%= link_to image_tag("manage/ico_del.gif", :alt=>t('manage.delete'), :title=>t('manage.delete')), manage_structure_path(:id=>structure.id), 
-            :method=>:delete, :confirm=>t("manage.confirm_delete"), :class=>"icons" %>
+        <% permitted_to? :delete, structure, :context => :manage_structures do %>
+          <%= link_to image_tag("manage/ico_del.gif", :alt=>t('manage.delete'), :title=>t('manage.delete')), manage_structure_path(:id=>structure.id), 
+              :method=>:delete, :confirm=>t("manage.confirm_delete"), :class=>"icons" %>
+        <% end %>
       </div>
     </div>
   </div>
