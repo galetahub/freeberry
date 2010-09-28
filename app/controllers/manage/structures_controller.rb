@@ -3,7 +3,6 @@ class Manage::StructuresController < Manage::BaseController
   
   before_filter :find_root, :only=>[:index]  
     
-  respond_to :html, :xml, :json
   defaults :route_prefix => 'manage'
   
   filter_access_to :move, :require => :update

@@ -5,5 +5,5 @@ class Manage::BaseController < ApplicationController
   
   filter_access_to :all
   
-  respond_to :html
+  respond_to :html, :xml, :json
 end

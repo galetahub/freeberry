@@ -5,7 +5,6 @@ class Manage::PostsController < Manage::BaseController
   
   before_filter :make_filter, :only => [:index]
   
-  respond_to :html, :xml, :json
   defaults :route_prefix => 'manage'
   actions :all, :except => [:show]
   

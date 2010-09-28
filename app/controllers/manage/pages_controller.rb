@@ -1,8 +1,6 @@
 class Manage::PagesController < Manage::BaseController
   before_filter :find_structure
   
-  respond_to :html, :xml
-  
   cache_sweeper :page_sweeper, :only => [:create, :update, :destroy]
   
   # GET /manage/structures/1/page/edit

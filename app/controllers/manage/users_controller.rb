@@ -5,7 +5,6 @@ class Manage::UsersController < Manage::BaseController
   before_filter :check_params, :only => [:create, :update]
   before_filter :find_user, :only=>[:update, :activate]
   
-  respond_to :html, :xml, :json
   defaults :route_prefix => 'manage'
   
   cache_sweeper :user_sweeper, :only=>[:update, :destroy]
