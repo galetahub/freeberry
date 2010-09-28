@@ -2,9 +2,12 @@ module Freeberry
   module Controllers
     module AuthorizedSystem
       def self.included(base)
-        base.extend ClassMethods
+        base.send(:extend, ClassMethods)
         base.send(:include, InstanceMethods)
+        
+        # Send current_user to Declarative authorization module
         base.before_filter :set_current_user
+        
         base.helper_method :content_manager?, :current_client, :client_logged_in?, :account_signed_in?
       end
     
