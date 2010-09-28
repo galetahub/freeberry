@@ -37,14 +37,14 @@ begin
     gemspec.files = FileList["[A-Z]*", "{app,config,lib}/**/*"]
     gemspec.rubyforge_project = "freeberry"
     
-    gemspec.add_dependency('warden', '>= 0.10.7')
-    gemspec.add_dependency('devise', '>= 1.1.1')
+    gemspec.add_dependency('devise', '>= 1.1.3')
     gemspec.add_dependency('paperclip', '>= 2.3.3')
     gemspec.add_dependency('nokogiri', '>= 1.4.3.1')
-    gemspec.add_dependency('declarative_authorization', '>= 0.5')
+    gemspec.add_dependency('declarative_authorization', '>= 0.5.1')
     gemspec.add_dependency('responders', '>= 0.6.2')
     gemspec.add_dependency('inherited_resources', '>= 1.1.2')
     gemspec.add_dependency('haddock', '>= 0.2.2')
+    gemspec.add_dependency('will_paginate', '>= 2.3.15')
   end
   
   Jeweler::GemcutterTasks.new

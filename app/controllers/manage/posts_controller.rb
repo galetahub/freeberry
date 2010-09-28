@@ -32,7 +32,7 @@ class Manage::PostsController < Manage::BaseController
       options = { :page => params[:page], :per_page => 20 }
       options.update @search.filter
       
-      @posts ||= end_of_association_chain.paginate(:all, options)
+      @posts ||= end_of_association_chain.paginate(options)
     end
     
     def make_filter
