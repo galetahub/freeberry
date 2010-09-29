@@ -192,6 +192,14 @@ uk:
         created_at_asc: "за датою за зростанням"
         name_desc: "за назвою за спаданням"
         name_asc: "за назвою за зростанням"
+    
+    posts:
+      sort:
+        _: "-"
+        created_at_desc: "за датою за спаданням"
+        created_at_asc: "за датою за зростанням"
+        title_desc: "за назвою за спаданням"
+        title_asc: "за назвою за зростанням"
       
   flash:
     manage:      

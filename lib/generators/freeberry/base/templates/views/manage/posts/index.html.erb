@@ -4,7 +4,7 @@
     	<div class="row-container">
         <div class="white-row">
           <div class="r-corn">
-            <%= link_to t('manage.menu.posts'), manage_structure_posts_path(@structure.id), :class=>"dark-text" %>
+            <%= link_to @structure.title, manage_structure_posts_path(@structure.id), :class=>"dark-text" %>
             
             <div class="act-bl">
               <% permitted_to? :create, :manage_posts do %>
