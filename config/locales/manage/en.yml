@@ -91,6 +91,7 @@ en:
     sort: "Sort"
     pictures: "Photos"
     download: "Download"
+    close: "Close"
     
     menu:
       structures: "Structure"

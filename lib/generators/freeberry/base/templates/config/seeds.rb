@@ -11,13 +11,13 @@ def insert_user
   password = Haddock::Password.generate
   
   admin = User.new(:name=>'Administrator', :email=>'bugs@brainberry.com.ua',
-                       :password=>password, :password_confirmation=>password)
+                   :password=>password, :password_confirmation=>password)
   admin.login = 'admin'
   admin.skip_confirmation!
   admin.save!
   admin.roles.create(:role_type => RoleType.admin)
 
-  puts "User created: :email=>#{admin.email}, :password=>#{admin.password}"
+  puts "Admin account: email: #{admin.email}, :password: #{admin.password}"
 end
 
 def insert_structures

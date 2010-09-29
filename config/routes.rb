@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   # Administration System
   namespace :manage do
+    root :to => "structures#index"
+    
 	  resources :users do
 	    member do
         post :activate, :suspend, :register, :delete, :unsuspend
@@ -16,8 +18,6 @@ Rails.application.routes.draw do
 		
     resources :settings
     resources :pictures
-    resources :assets, :only=>[:create, :destroy]
+    resources :assets, :only => [:create, :destroy]
   end
-	
-	match 'manage', :to => "manage/structures#index"
 end

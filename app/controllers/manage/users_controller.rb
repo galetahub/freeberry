@@ -51,10 +51,10 @@ class Manage::UsersController < Manage::BaseController
   protected
     
     def collection
-      options = { :page => params[:page], :per_page => 20, :include=>[:avatar] }
+      options = { :page => params[:page], :per_page => 20 }
       options.update @search.filter
       
-      @users ||= end_of_association_chain.paginate(options)
+      @users ||= end_of_association_chain.includes(:avatar).paginate(options)
     end
     
     def make_filter
