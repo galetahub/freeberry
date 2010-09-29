@@ -80,7 +80,7 @@ module Freeberry
           @geometry
         end
         
-        private
+        protected
         
           def read_dimensions
             if image? && has_dimensions?

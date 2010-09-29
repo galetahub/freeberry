@@ -35,7 +35,7 @@ module Freeberry
           @comments_count
         end
     
-        private
+        protected
     
           def make_author
           	unless self.author.nil?

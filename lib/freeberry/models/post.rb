@@ -29,11 +29,14 @@ module Freeberry
           self.content.no_html
         end
         
-        private
+        protected
     
           def make_date
-            self.created_at ||= Time.now
-            self.year = self.created_at.year
+            self.published_at ||= Time.now
+      
+            self.year  = self.published_at.year  if respond_to?(:year)
+            self.month = self.published_at.month if respond_to?(:month)
+            self.day   = self.published_at.day   if respond_to?(:day)
           end
       end
     end

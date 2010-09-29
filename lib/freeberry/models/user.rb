@@ -63,7 +63,7 @@ module Freeberry
           events
         end
         
-        private
+        protected
     
           def make_login
 	          return if self.email.blank?

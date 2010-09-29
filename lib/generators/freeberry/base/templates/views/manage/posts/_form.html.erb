@@ -6,7 +6,7 @@
     <%= form.text_field "title", :class=>"text name" %>
         
     <%= form.label "content" %>
-    <%= form.cktext_area "content", {:width=>700} %>
+    <%= form.cktext_area "content", options_for_ckeditor %>
         
     <%= form.label :published_at %>
     <%= form.text_field :published_at %>
