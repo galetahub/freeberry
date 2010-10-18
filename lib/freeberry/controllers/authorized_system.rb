@@ -21,7 +21,9 @@ module Freeberry
         # is used by model security that does not have access to the
         # controller#current_user method. It is called as a before_filter.
         def set_current_user
-          Authorization.current_user = current_user
+          without_access_control do
+            Authorization.current_user = current_user
+          end
         end
         
         def permission_denied
