@@ -13,7 +13,7 @@ module Freeberry
             before_validation :make_login
         
             has_many :roles, :dependent => :delete_all
-            has_one :avatar, :as => :assetable, :dependent => :destroy
+            has_one :avatar, :as => :assetable, :dependent => :destroy, :autosave => true
             
             scope :admins, joins(:roles).where(["`roles`.role_type = ?", ::RoleType.admin.id])
             scope :with_role, proc {|role| joins(:roles).where(["`roles`.role_type = ?", role.id]) }
