@@ -1,7 +1,7 @@
 uk:
   errors:
     messages:
-      not_found: "не найдено"
+      not_found: "не знайдено"
       already_confirmed: "вже підтверджено"
       not_locked: "не заблокований"
 
