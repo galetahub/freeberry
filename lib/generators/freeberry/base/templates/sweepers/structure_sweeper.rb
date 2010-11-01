@@ -16,11 +16,9 @@ class StructureSweeper < ActionController::Caching::Sweeper
 	# Clear all orders cache files
 	def self.sweep!
 	  cache_store = Rails.application.config.action_controller.cache_store
-	  
-	  if cache_store
-  	  cache_store.clear 
-      Rails.logger.info("StructureSweeper clear all cache")
-    end
+	  cache_store.clear if cache_store
+	    
+    Rails.logger.info("StructureSweeper clear all cache")
 	end
 	
 	private

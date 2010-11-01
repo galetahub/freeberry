@@ -11,18 +11,17 @@
   <!--[if lte IE 6]><link href="/stylesheets/ie.css" rel="stylesheet" type="text/css" /><![endif]-->
   <!--[if lte IE 7]><link href="/stylesheets/ie7.css" rel="stylesheet" type="text/css" /><![endif]-->  
  
-  <%= javascript_include_tag "jquery-1.4.2.min", "preloader", "rails" %>
+  <%= javascript_include_tag "jquery-1.4.3.min", "preloader", "rails" %>
   <%= yield(:head) %>
 </head>
 <body>
   <%= render :partial => "shared/manage/panel" if content_manager? %>
-  <div id='message'><%= render :partial => 'shared/notice' if flash %></div>
+  <%= render :partial => 'shared/notice' if flash %>
   
   <div class='content'>
     <%= yield %>
   </div>
   
-	
   <%= yield(:footer) %>
   
 	<div id="preloader" style="display:none;z-index:5000;" class="load-wait"><div><strong>Загрузка</strong></div></div>
