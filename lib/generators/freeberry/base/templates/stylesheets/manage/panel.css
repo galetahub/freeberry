@@ -1,11 +1,11 @@
 @charset "utf-8";
 
-a {
-	text-decoration: none;	
-	outline: none;
+#manage-panel a {
+  text-decoration: none;    
+  outline: none;
 }
-a img {
-	border: none;	
+#manage-panel a img {
+  border: none;    
 }
 #manage-panel {
 	overflow: hidden;
