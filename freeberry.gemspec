@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{freeberry}
-  s.version = "0.2.1"
+  s.version = "0.2.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Igor Galeta", "Pavlo Galeta"]
-  s.date = %q{2010-09-28}
+  s.date = %q{2010-11-01}
   s.description = %q{Freeberry is a Brainberry CRM System}
   s.email = %q{galeta.igor@gmail.com}
   s.extra_rdoc_files = [
@@ -42,6 +42,7 @@ Gem::Specification.new do |s|
      "lib/freeberry/controllers/head_options.rb",
      "lib/freeberry/controllers/helper_tools.rb",
      "lib/freeberry/core_ext.rb",
+     "lib/freeberry/core_ext/array.rb",
      "lib/freeberry/core_ext/i18n.rb",
      "lib/freeberry/core_ext/string.rb",
      "lib/freeberry/header_tools.rb",
@@ -182,18 +183,37 @@ Gem::Specification.new do |s|
      "lib/generators/freeberry/base/templates/javascripts/datepicker/jquery-ui-i18n.js",
      "lib/generators/freeberry/base/templates/javascripts/datepicker/jquery.ui.datepicker-ru.js",
      "lib/generators/freeberry/base/templates/javascripts/datepicker/jquery.ui.datepicker-uk.js",
-     "lib/generators/freeberry/base/templates/javascripts/jquery-1.4.2.min.js",
-     "lib/generators/freeberry/base/templates/javascripts/jquery-ui-1.8.2.custom.min.js",
-     "lib/generators/freeberry/base/templates/javascripts/jquery.fancybox-1.3.1.pack.js",
+     "lib/generators/freeberry/base/templates/javascripts/jquery-1.4.3.min.js",
+     "lib/generators/freeberry/base/templates/javascripts/jquery-ui-1.8.5.custom.min.js",
+     "lib/generators/freeberry/base/templates/javascripts/jquery.fancybox-1.3.2.pack.js",
      "lib/generators/freeberry/base/templates/javascripts/manage.js",
      "lib/generators/freeberry/base/templates/javascripts/preloader.js",
      "lib/generators/freeberry/base/templates/javascripts/rails.js",
      "lib/generators/freeberry/base/templates/javascripts/wp_cookie.js",
-     "lib/generators/freeberry/base/templates/stylesheets/jquery.fancybox-1.3.1.css",
+     "lib/generators/freeberry/base/templates/stylesheets/fancybox/images/blank.gif",
+     "lib/generators/freeberry/base/templates/stylesheets/fancybox/images/fancy_close.png",
+     "lib/generators/freeberry/base/templates/stylesheets/fancybox/images/fancy_loading.png",
+     "lib/generators/freeberry/base/templates/stylesheets/fancybox/images/fancy_nav_left.png",
+     "lib/generators/freeberry/base/templates/stylesheets/fancybox/images/fancy_nav_right.png",
+     "lib/generators/freeberry/base/templates/stylesheets/fancybox/images/fancy_shadow_e.png",
+     "lib/generators/freeberry/base/templates/stylesheets/fancybox/images/fancy_shadow_n.png",
+     "lib/generators/freeberry/base/templates/stylesheets/fancybox/images/fancy_shadow_ne.png",
+     "lib/generators/freeberry/base/templates/stylesheets/fancybox/images/fancy_shadow_nw.png",
+     "lib/generators/freeberry/base/templates/stylesheets/fancybox/images/fancy_shadow_s.png",
+     "lib/generators/freeberry/base/templates/stylesheets/fancybox/images/fancy_shadow_se.png",
+     "lib/generators/freeberry/base/templates/stylesheets/fancybox/images/fancy_shadow_sw.png",
+     "lib/generators/freeberry/base/templates/stylesheets/fancybox/images/fancy_shadow_w.png",
+     "lib/generators/freeberry/base/templates/stylesheets/fancybox/images/fancy_title_left.png",
+     "lib/generators/freeberry/base/templates/stylesheets/fancybox/images/fancy_title_main.png",
+     "lib/generators/freeberry/base/templates/stylesheets/fancybox/images/fancy_title_over.png",
+     "lib/generators/freeberry/base/templates/stylesheets/fancybox/images/fancy_title_right.png",
+     "lib/generators/freeberry/base/templates/stylesheets/fancybox/images/fancybox-x.png",
+     "lib/generators/freeberry/base/templates/stylesheets/fancybox/images/fancybox-y.png",
+     "lib/generators/freeberry/base/templates/stylesheets/fancybox/images/fancybox.png",
+     "lib/generators/freeberry/base/templates/stylesheets/fancybox/jquery.fancybox-1.3.2.css",
      "lib/generators/freeberry/base/templates/stylesheets/manage/ie.css",
      "lib/generators/freeberry/base/templates/stylesheets/manage/main.css",
      "lib/generators/freeberry/base/templates/stylesheets/manage/panel.css",
-     "lib/generators/freeberry/base/templates/stylesheets/smoothness/images/ui-anim_basic_16x16.gif",
      "lib/generators/freeberry/base/templates/stylesheets/smoothness/images/ui-bg_flat_0_aaaaaa_40x100.png",
      "lib/generators/freeberry/base/templates/stylesheets/smoothness/images/ui-bg_flat_75_ffffff_40x100.png",
      "lib/generators/freeberry/base/templates/stylesheets/smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png",
@@ -207,7 +227,7 @@ Gem::Specification.new do |s|
      "lib/generators/freeberry/base/templates/stylesheets/smoothness/images/ui-icons_454545_256x240.png",
      "lib/generators/freeberry/base/templates/stylesheets/smoothness/images/ui-icons_888888_256x240.png",
      "lib/generators/freeberry/base/templates/stylesheets/smoothness/images/ui-icons_cd0a0a_256x240.png",
-     "lib/generators/freeberry/base/templates/stylesheets/smoothness/jquery-ui-1.8.2.custom.css",
+     "lib/generators/freeberry/base/templates/stylesheets/smoothness/jquery-ui-1.8.5.custom.css",
      "lib/generators/freeberry/base/templates/sweepers/page_sweeper.rb",
      "lib/generators/freeberry/base/templates/sweepers/post_sweeper.rb",
      "lib/generators/freeberry/base/templates/sweepers/structure_sweeper.rb",
