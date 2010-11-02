@@ -33,4 +33,6 @@ class Avatar < Asset
 	
 	validates_attachment_size :data, :less_than => 1.megabyte
 	validates_attachment_content_type :data, :content_type => ['image/gif', 'image/jpeg', 'image/png', 'image/tiff', 'image/x-png']
+	
+	attr_accessible :data
 end

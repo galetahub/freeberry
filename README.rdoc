@@ -80,6 +80,29 @@ In config/application.rb:
     source Rails.root.join("config", "application.yml")
   end
 
+=== Security
+
+Freeberry by default protected all active record attributes for security with mass assignment. 
+To access protected attributes to be dynamic based on user permissions:
+
+  # models/article.rb
+  class Article < ActiveRecord::Base
+    attr_accessible :name, :content
+  end
+  
+  # articles_controller.rb
+  def create
+    @article = Article.new
+    @article.accessible = :all if admin?
+    @article.attributes = params[:article]
+    if @article.save
+      flash[:notice] = "Successfully created article."
+      redirect_to @article
+    else
+      render :action => 'new'
+    end
+  end
+
 === Generators
 
 Manage scaffold:

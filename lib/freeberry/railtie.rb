@@ -16,6 +16,7 @@ module Freeberry
       
       ActiveSupport.on_load :active_record do
         ActiveRecord::Base.send :include, Freeberry::MysqlUtils
+        ActiveRecord::Base.send :include, Freeberry::AccessibleAttributes
       end
     end
     

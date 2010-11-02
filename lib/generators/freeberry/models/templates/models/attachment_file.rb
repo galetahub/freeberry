@@ -30,4 +30,6 @@ class AttachmentFile < Asset
                     :path => ":rails_root/public/assets/attachments/:id/:filename"
   
   validates_attachment_size :data, :less_than => 100.megabytes
+  
+  attr_accessible :data
 end

@@ -15,4 +15,6 @@
 
 class Role < ActiveRecord::Base
   include Freeberry::Models::Role
+  
+  attr_accessible :kind
 end

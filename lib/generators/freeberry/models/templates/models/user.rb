@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :confirmable, :lockable, :timeoutable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  attr_accessible :name, :email, :password, :password_confirmation
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me
   
 #  acts_as_attach_file :avatar
   

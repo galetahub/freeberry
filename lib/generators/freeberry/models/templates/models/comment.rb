@@ -3,7 +3,7 @@ class Comment < ActiveRecord::Base
   
   using_access_control
   
-  attr_protected :user_id, :content_html
+  attr_accessible :user_name, :user_email, :content, :is_follow
 
   auto_html_for :content do
     html_escape
