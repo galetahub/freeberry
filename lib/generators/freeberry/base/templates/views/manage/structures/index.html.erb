@@ -25,22 +25,21 @@
 
 <script type='text/javascript'>
   $(document).ready(function(){
-    init_collection('structures', 'gray-row');
+    Manage.init_collection('structures', 'gray-row');
     
     Tree.init('#structures');
     
     $('a.move_up').bind("ajax:complete", function(){
       var sid = $(this).attr('href').replace('/manage/structures/', '');
       
-      move_node('structure_' + parseInt(sid), 'up'); 
+      Manage.move_node('structure_' + parseInt(sid), 'up'); 
     });
     
     $('a.move_down').bind("ajax:complete", function(){
       var sid = $(this).attr('href').replace('/manage/structures/', '');
       
-      move_node('structure_' + parseInt(sid), 'down');
+      Manage.move_node('structure_' + parseInt(sid), 'down');
     });
-    
   });
 </script>
 

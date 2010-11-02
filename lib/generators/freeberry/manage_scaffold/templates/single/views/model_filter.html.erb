@@ -1,6 +1,6 @@
 <div class="bot-bg">
   <div class="filt-bl">
-    <%%= link_to_function t('manage.model_filter.title'), "toggle_element('block_filter')", :class=>"dark-arr" %>
+    <%%= link_to_function t('manage.model_filter.title'), "Manage.toggle_element('block_filter')", :class=>"dark-arr" %>
     
     <%%= cookie_content_tag(:div, :id=>"block_filter", :class=>"filt") do %>
       <%%= form_for @search, :as => :search, :url=>manage_<%= plural_name %>_path, :html=>{:method=>:get, :id=>"form_filter"} do |f| %>

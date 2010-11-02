@@ -1,6 +1,6 @@
 <div class="bot-bg">
   <div class="filt-bl">
-    <%= link_to_function t('manage.model_filter.title'), "toggle_element('block_filter')", :class=>"dark-arr" %>
+    <%= link_to_function t('manage.model_filter.title'), "Manage.toggle_element('block_filter')", :class=>"dark-arr" %>
     
     <%= cookie_content_tag(:div, :id=>"block_filter", :class=>"filt") do %>
       <%= form_for @search, :as => :search, :url=>manage_users_path, :html=>{:method=>:get, :id=>"form_filter"} do |f| %>
@@ -18,6 +18,7 @@
       <% end %>
     <% end %>
   </div>
+  
   <div class="sort">
   	<label><%= t('manage.sort') %></label>
     <div class="select"><%= link_to_function t("manage.users.sort.#{@search.order_column}_#{@search.order_type}"), "SelectList.toggle(event)", :class=>"corn", :id=>'sort_select' %></div>
@@ -29,5 +30,4 @@
       <%= link_to_sort(t('manage.users.sort.name_asc'), :name=>"name", :order_type=>'asc') %>
     </div>
   </div>
-  
 </div>

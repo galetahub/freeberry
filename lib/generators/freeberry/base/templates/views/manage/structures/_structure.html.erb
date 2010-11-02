@@ -5,12 +5,12 @@
       <div class="act-bl" style="display:none;">
         <% permitted_to? :update, structure, :context => :manage_structures do %>
           <%= link_to image_tag("manage/ico_down.gif", :alt=>t('manage.position.down'), :title=>t('manage.position.down')), 
-              move_manage_structure_path(:id => structure.id, :direction => 'down'),
+              move_manage_structure_path(:id => structure.id, :direction => 'down', :format => :json),
               :remote => true,
               :class=>"icons move_down" %>
               
           <%= link_to image_tag("manage/ico_up.gif", :alt=>t('manage.position.up'), :title=>t('manage.position.up')), 
-              move_manage_structure_path(:id => structure.id, :direction => 'up'),
+              move_manage_structure_path(:id => structure.id, :direction => 'up', :format => :json),
               :remote => true,
               :class=>"icons move_up" %>
           
