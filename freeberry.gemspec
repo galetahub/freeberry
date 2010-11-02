@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{freeberry}
-  s.version = "0.2.2"
+  s.version = "0.2.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Igor Galeta", "Pavlo Galeta"]
-  s.date = %q{2010-11-01}
+  s.date = %q{2010-11-02}
   s.description = %q{Freeberry is a Brainberry CRM System}
   s.email = %q{galeta.igor@gmail.com}
   s.extra_rdoc_files = [
@@ -38,6 +38,7 @@ Gem::Specification.new do |s|
      "config/locales/manage/uk.yml",
      "config/routes.rb",
      "lib/freeberry.rb",
+     "lib/freeberry/accessible_attributes.rb",
      "lib/freeberry/controllers/authorized_system.rb",
      "lib/freeberry/controllers/head_options.rb",
      "lib/freeberry/controllers/helper_tools.rb",
