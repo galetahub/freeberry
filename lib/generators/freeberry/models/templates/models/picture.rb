@@ -14,8 +14,6 @@
 #  user_id           :integer(4)
 #  created_at        :datetime
 #  updated_at        :datetime
-#  duration          :float           default(0.0)
-#  resolution_id     :integer(1)      default(0)
 #
 # Indexes
 #
@@ -32,4 +30,6 @@ class Picture < Asset
 	                  :styles => { :content => '575>', :thumb => '80x80#', :cover => '400x250#' }
 	
 	validates_attachment_size :data, :less_than => 2.megabytes
+	
+	attr_accessible :data
 end
