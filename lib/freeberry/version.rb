@@ -2,7 +2,7 @@ module Freeberry
   module Version
     MAJOR = 0
     MINOR = 2
-    RELEASE = 4
+    RELEASE = 5
 
     def self.dup
       "#{MAJOR}.#{MINOR}.#{RELEASE}"

@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{freeberry}
-  s.version = "0.2.4"
+  s.version = "0.2.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Igor Galeta", "Pavlo Galeta"]
-  s.date = %q{2010-11-02}
+  s.date = %q{2010-11-03}
   s.description = %q{Freeberry is a Brainberry CRM System}
   s.email = %q{galeta.igor@gmail.com}
   s.extra_rdoc_files = [
@@ -184,8 +184,6 @@ Gem::Specification.new do |s|
      "lib/generators/freeberry/base/templates/javascripts/datepicker/jquery-ui-i18n.js",
      "lib/generators/freeberry/base/templates/javascripts/datepicker/jquery.ui.datepicker-ru.js",
      "lib/generators/freeberry/base/templates/javascripts/datepicker/jquery.ui.datepicker-uk.js",
-     "lib/generators/freeberry/base/templates/javascripts/jquery-1.4.3.min.js",
-     "lib/generators/freeberry/base/templates/javascripts/jquery-ui-1.8.5.custom.min.js",
      "lib/generators/freeberry/base/templates/javascripts/jquery.fancybox-1.3.2.pack.js",
      "lib/generators/freeberry/base/templates/javascripts/manage.js",
      "lib/generators/freeberry/base/templates/javascripts/preloader.js",
@@ -228,7 +226,7 @@ Gem::Specification.new do |s|
      "lib/generators/freeberry/base/templates/stylesheets/smoothness/images/ui-icons_454545_256x240.png",
      "lib/generators/freeberry/base/templates/stylesheets/smoothness/images/ui-icons_888888_256x240.png",
      "lib/generators/freeberry/base/templates/stylesheets/smoothness/images/ui-icons_cd0a0a_256x240.png",
-     "lib/generators/freeberry/base/templates/stylesheets/smoothness/jquery-ui-1.8.5.custom.css",
+     "lib/generators/freeberry/base/templates/stylesheets/smoothness/jquery-ui-1.8.6.custom.css",
      "lib/generators/freeberry/base/templates/sweepers/page_sweeper.rb",
      "lib/generators/freeberry/base/templates/sweepers/post_sweeper.rb",
      "lib/generators/freeberry/base/templates/sweepers/structure_sweeper.rb",
