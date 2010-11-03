@@ -5,12 +5,19 @@
 	<%= csrf_meta_tag %>
 	<title><%= t('manage.page_title') %></title>
 	<%= stylesheet_link_tag "manage/main" %>
-	<%= stylesheet_link_tag "smoothness/jquery-ui-1.8.5.custom" %>
+	<%= stylesheet_link_tag "smoothness/jquery-ui-1.8.6.custom" %>
  	<!--[if lt IE 7]><%= stylesheet_link_tag "manage/ie" %><![endif]-->
  	
- 	<%= javascript_include_tag :ckeditor, "jquery-1.4.3.min", "jquery-ui-1.8.5.custom.min" %>
- 	<%= javascript_include_tag "preloader", "rails", "wp_cookie", "manage" %>
+ 	<script src="https://www.google.com/jsapi?key=" type="text/javascript"></script>
+  <script language="Javascript" type="text/javascript">
+  //<![CDATA[
+    google.load("jquery", "1.4.3");
+    google.load("jqueryui", "1.8.6");
+    google.load("swfobject", "2.2");
+  //]]>
+  </script>
  	
+ 	<%= javascript_include_tag :ckeditor, "preloader", "rails", "wp_cookie", "manage" %>
 	<%= yield(:head)%>
 </head>
 <body>
