@@ -1,13 +1,13 @@
 <% unless translated_columns.empty? -%>
-<%%= render :partial=>"shared/manage_locale" %>
+<%%= render :partial=>"shared/manage/locale" %>
 
-<%% AVAILABLE_LOCALES.each do |locale| %>
-  <%%= content_tag(:div, :id=>"s#{locale}_block", :class=>"add-white-bl", :style=>(I18n.locale.to_s == locale ? nil : 'display:none;')) do %>
+<%% Globalize.available_locales.each do |locale| %>
+  <%%= content_tag(:div, :id=>"s#{locale}_block", :class=>"add-white-bl", :style=>(I18n.locale.to_s == locale.to_s ? nil : 'display:none;')) do %>
 	  <div class="bot-bg">
     	<div class="inputs-bl">
     	  <% translated_columns.each do |attribute| -%>
     	    <%%= form.label "<%= attribute %>_#{locale}" %>
-    	    <%= Freeberry::Utils.form_field("form", "#{attribute}_#\{locale\}".inspect, model.column_for_attribute(attribute)) %><br/>
+    	    <%= Freeberry::Utils.form_field("form", "#{attribute}_#\{locale\}".inspect, model.column_for_attribute(attribute)) %>
     	  <% end -%>
       </div>
     </div>
@@ -20,7 +20,7 @@
   <% model.attributes.each do |attribute, value| -%>
     <% next if translated_columns.include?(attribute.to_sym) %>
     <%%= form.label :<%= attribute %> %>
-    <%= Freeberry::Utils.form_field("form", ":#{attribute}", model.column_for_attribute(attribute)) %><br/>
+    <%= Freeberry::Utils.form_field("form", ":#{attribute}", model.column_for_attribute(attribute)) %> <br/>
   <% end -%>
   </div>
 </div>
