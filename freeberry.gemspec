@@ -328,33 +328,9 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<devise>, [">= 1.1.3"])
-      s.add_runtime_dependency(%q<paperclip>, [">= 2.3.3"])
-      s.add_runtime_dependency(%q<nokogiri>, [">= 1.4.3.1"])
-      s.add_runtime_dependency(%q<declarative_authorization>, [">= 0.5.1"])
-      s.add_runtime_dependency(%q<responders>, [">= 0.6.2"])
-      s.add_runtime_dependency(%q<inherited_resources>, [">= 1.1.2"])
-      s.add_runtime_dependency(%q<haddock>, [">= 0.2.2"])
-      s.add_runtime_dependency(%q<will_paginate>, [">= 2.3.15"])
     else
-      s.add_dependency(%q<devise>, [">= 1.1.3"])
-      s.add_dependency(%q<paperclip>, [">= 2.3.3"])
-      s.add_dependency(%q<nokogiri>, [">= 1.4.3.1"])
-      s.add_dependency(%q<declarative_authorization>, [">= 0.5.1"])
-      s.add_dependency(%q<responders>, [">= 0.6.2"])
-      s.add_dependency(%q<inherited_resources>, [">= 1.1.2"])
-      s.add_dependency(%q<haddock>, [">= 0.2.2"])
-      s.add_dependency(%q<will_paginate>, [">= 2.3.15"])
     end
   else
-    s.add_dependency(%q<devise>, [">= 1.1.3"])
-    s.add_dependency(%q<paperclip>, [">= 2.3.3"])
-    s.add_dependency(%q<nokogiri>, [">= 1.4.3.1"])
-    s.add_dependency(%q<declarative_authorization>, [">= 0.5.1"])
-    s.add_dependency(%q<responders>, [">= 0.6.2"])
-    s.add_dependency(%q<inherited_resources>, [">= 1.1.2"])
-    s.add_dependency(%q<haddock>, [">= 0.2.2"])
-    s.add_dependency(%q<will_paginate>, [">= 2.3.15"])
   end
 end
 
