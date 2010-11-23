@@ -32,7 +32,7 @@ begin
     gemspec.summary = "Rails CRM System"
     gemspec.description = "Freeberry is a Brainberry CRM System"
     gemspec.email = "galeta.igor@gmail.com"
-    gemspec.homepage = "git://github.com/galetahub/freeberry.git"
+    gemspec.homepage = "https://github.com/galetahub/freeberry"
     gemspec.authors = ["Igor Galeta", "Pavlo Galeta"]
     gemspec.files = FileList["[A-Z]*", "{app,config,lib}/**/*"]
     gemspec.rubyforge_project = "freeberry"

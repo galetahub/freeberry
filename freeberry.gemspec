@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Igor Galeta", "Pavlo Galeta"]
-  s.date = %q{2010-11-03}
+  s.date = %q{2010-11-23}
   s.description = %q{Freeberry is a Brainberry CRM System}
   s.email = %q{galeta.igor@gmail.com}
   s.extra_rdoc_files = [
@@ -312,7 +312,7 @@ Gem::Specification.new do |s|
      "lib/generators/freeberry/models/templates/models/user.rb",
      "lib/tasks/freeberry.rake"
   ]
-  s.homepage = %q{git://github.com/galetahub/freeberry.git}
+  s.homepage = %q{https://github.com/galetahub/freeberry}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{freeberry}
