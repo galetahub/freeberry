@@ -205,7 +205,7 @@ uk:
     manage:      
       actions:
         create:
-          success: "Запис успішно створена"
+          success: "Запис успішно створено"
           failure: "Виникли помилки при збереженні даних"
         update:
           success: "Запис успішно оновлено"
