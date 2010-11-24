@@ -1,13 +1,10 @@
-<% javascript "calendar/ui.datepicker-#{I18n.locale}" %>
+<% javascript "datepicker/jquery.ui.datepicker-#{I18n.locale}" %>
 
 <div class="edit-cont">
   <div class="inputs-bl">
     <%= form.label "title" %>
     <%= form.text_field "title", :class=>"text name" %>
-        
-    <%= form.label "content" %>
-    <%= form.cktext_area "content", options_for_ckeditor %>
-        
+    
     <%= form.label :published_at %>
     <%= form.text_field :published_at %>
     
@@ -19,6 +16,9 @@
 			    dateFormat: 'dd.mm.yy'
 		    });
 	    });
-	  </script>
+	  </script>   
+     
+    <%= form.label "content" %>
+    <%= form.cktext_area "content", options_for_ckeditor(:width => 860) %>
   </div>
 </div>

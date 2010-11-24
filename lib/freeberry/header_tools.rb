@@ -2,29 +2,20 @@
 module Freeberry
   module HeaderTools
     def self.included(base)
-      base.extend(ClassMethods)
+      base.send(:extend, ClassMethods)
+      base.send(:include, InstanceMethods)
     end
     
     module ClassMethods
       def self.extended(base)
-        base.has_one :header, :as=>:headerable, :dependent=>:destroy
-        base.after_update :save_header
-      
-        base.send :include, InstanceMethods
+        base.class_eval do
+          has_one :header, :as => :headerable, :dependent => :delete
+          accepts_nested_attributes_for :header, :reject_if => :all_blank
+        end
       end
     end
     
     module InstanceMethods
-      def page_header=(value)
-        h = self.header || self.build_header
-        h.attributes = value
-      end
-    
-      private
-      
-        def save_header
-          self.header.save(:validate => false) unless self.header.nil?
-        end
     end
   end
 end
