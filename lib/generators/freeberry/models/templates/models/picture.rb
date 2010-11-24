@@ -24,8 +24,8 @@
 
 class Picture < Asset
   has_attached_file :data,
-                    :url  => "/assets/pictures/:id/:style_:filepath",
-                    :path => ":rails_root/public/assets/pictures/:id/:style_:filepath",
+                    :url  => "/assets/pictures/:id/:style_:basename.:extension",
+                    :path => ":rails_root/public/assets/pictures/:id/:style_:basename.:extension",
                     :convert_options => { :all => "-strip" },
 	                  :styles => { :content => '575>', :thumb => '80x80#' }
 	

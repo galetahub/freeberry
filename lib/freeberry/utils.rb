@@ -2,7 +2,7 @@
 module Freeberry
   class Utils
     class << self
-      def parameterize_file_name(filename)
+      def parameterize_filename(filename)
         extension = File.extname(filename)
         basename = filename.gsub(/#{extension}$/, "")
         

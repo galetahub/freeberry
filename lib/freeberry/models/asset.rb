@@ -14,7 +14,7 @@ module Freeberry
             belongs_to :assetable, :polymorphic => true
     
             before_validation :make_content_type
-            before_create :read_dimensions
+            before_create :read_dimensions, :parameterize_filename
           end
         end
       end
@@ -81,6 +81,13 @@ module Freeberry
         end
         
         protected
+        
+          def parameterize_filename
+            unless data_file_name.blank?
+              filename = Freeberry::Utils.parameterize_filename(data_file_name)
+              self.data.instance_write(:file_name, filename)
+            end  
+          end
         
           def read_dimensions
             if image? && has_dimensions?

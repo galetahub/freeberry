@@ -21,12 +21,6 @@ module Freeberry
     end
     
     config.after_initialize do
-      if defined? ::Paperclip
-        ::Paperclip.interpolates :filepath do |attachment, style|
-          Freeberry::Utils.parameterize_file_name(attachment.original_filename)
-        end
-      end
-
       ::ActionController::Base.send :include, Freeberry::Controllers::AuthorizedSystem
       ::ActionController::Base.send :include, Freeberry::Controllers::HeadOptions
     

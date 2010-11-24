@@ -26,8 +26,8 @@
 
 class Avatar < Asset
 	has_attached_file :data,
-	                  :url  => "/assets/avatars/:id/:style_:filepath",
-                    :path => ":rails_root/public/assets/avatars/:id/:style_:filepath",
+	                  :url  => "/assets/avatars/:id/:style_:basename.:extension",
+                    :path => ":rails_root/public/assets/avatars/:id/:style_:basename.:extension",
                     :convert_options => { :all => "-strip" },
 	                  :styles => { :thumb => "50x50#", :small => "32x32#" }
 	
