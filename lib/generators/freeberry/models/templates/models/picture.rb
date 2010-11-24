@@ -24,12 +24,13 @@
 
 class Picture < Asset
   has_attached_file :data,
-                    :url  => "/assets/pictures/:id/:style_:basename.:extension",
-                    :path => ":rails_root/public/assets/pictures/:id/:style_:basename.:extension",
+                    :url  => "/assets/pictures/:id/:style_:filepath",
+                    :path => ":rails_root/public/assets/pictures/:id/:style_:filepath",
                     :convert_options => { :all => "-strip" },
-	                  :styles => { :content => '575>', :thumb => '80x80#', :cover => '400x250#' }
+	                  :styles => { :content => '575>', :thumb => '80x80#' }
 	
 	validates_attachment_size :data, :less_than => 2.megabytes
+	validates_attachment_content_type :data, :content_type => Freeberry::IMAGE_TYPES
 	
 	attr_accessible :data
 end

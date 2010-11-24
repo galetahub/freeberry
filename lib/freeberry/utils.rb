@@ -2,6 +2,13 @@
 module Freeberry
   class Utils
     class << self
+      def parameterize_file_name(filename)
+        extension = File.extname(filename)
+        basename = filename.gsub(/#{extension}$/, "")
+        
+        [filename.parameterize('_'), extension].join.downcase
+      end
+      
       def form_field(form_name, field_name, column, options={})
         field = case column.type
           when :string, :binary, :integer, :float, :decimal then 

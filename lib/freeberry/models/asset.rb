@@ -14,7 +14,7 @@ module Freeberry
             belongs_to :assetable, :polymorphic => true
     
             before_validation :make_content_type
-            before_create :read_dimensions, :parameterize_file_name
+            before_create :read_dimensions
           end
         end
       end
@@ -45,7 +45,7 @@ module Freeberry
         end
         
         def format_created_at
-          I18n.l(self.created_at, :format=>"%d.%m.%Y %H:%M")
+          I18n.l(created_at, :format => "%d.%m.%Y %H:%M")
         end
         
         def to_xml(options = {})
@@ -68,11 +68,11 @@ module Freeberry
         end
         
         def has_dimensions?
-          self.respond_to?(:width) && self.respond_to?(:height)
+          respond_to?(:width) && respond_to?(:height)
         end
         
         def image?
-          ["image/jpeg", "image/tiff", "image/png", "image/gif", "image/bmp"].include?(self.data_content_type)
+          Freeberry::IMAGE_TYPES.include?(data_content_type)
         end
         
         def geometry
@@ -89,17 +89,8 @@ module Freeberry
             end
           end
           
-          def parameterize_file_name
-            unless data_file_name.blank?
-              extension = File.extname(data_file_name).downcase
-              filename = File.basename(data_file_name, extension).downcase.parameterize
-                      
-              self.data.instance_write(:file_name, [filename, extension].join)
-            end
-          end
-          
           def make_content_type
-            if data_content_type == "application/octet-stream"
+            if data_content_type.blank? || data_content_type == "application/octet-stream"
               content_types = MIME::Types.type_for(filename)
               self.data_content_type = content_types.first.to_s unless content_types.empty?
             end

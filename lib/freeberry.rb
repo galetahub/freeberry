@@ -31,6 +31,8 @@ module Freeberry
     autoload :Asset,         'freeberry/models/asset'
     autoload :Header,        'freeberry/models/header'
   end
+  
+  IMAGE_TYPES = ['image/jpeg', 'image/png', 'image/gif', 'image/jpg', 'image/pjpeg', 'image/tiff', 'image/x-png']
 end
 
 require 'freeberry/railtie'

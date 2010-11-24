@@ -26,13 +26,13 @@
 
 class Avatar < Asset
 	has_attached_file :data,
-	                  :url  => "/assets/avatars/:id/:style_:basename.:extension",
-                    :path => ":rails_root/public/assets/avatars/:id/:style_:basename.:extension",
+	                  :url  => "/assets/avatars/:id/:style_:filepath",
+                    :path => ":rails_root/public/assets/avatars/:id/:style_:filepath",
                     :convert_options => { :all => "-strip" },
-	                  :styles => { :thumb => "50x50#", :small=>"32x32#" }
+	                  :styles => { :thumb => "50x50#", :small => "32x32#" }
 	
 	validates_attachment_size :data, :less_than => 1.megabyte
-	validates_attachment_content_type :data, :content_type => ['image/gif', 'image/jpeg', 'image/png', 'image/tiff', 'image/x-png']
+	validates_attachment_content_type :data, :content_type => Freeberry::IMAGE_TYPES
 	
 	attr_accessible :data
 end
