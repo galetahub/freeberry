@@ -18,7 +18,6 @@ module Freeberry
             validates :user_email, :presence => true, :length => { :within => 6..100 }, 
                       :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
             
-            
             before_validation :make_author
             
             scope :recently, order("#{quoted_table_name}.created_at DESC")
@@ -41,9 +40,9 @@ module Freeberry
         protected
     
           def make_author
-          	unless author.nil?
-            	self.user_email = author.email
-            	self.user_name = author.name
+          	unless self.author.nil?
+            	self.user_email = self.author.email if self.author.respond_to?(:email)
+            	self.user_name = self.author.name if self.author.respond_to?(:name)
           	end
           end
       end
