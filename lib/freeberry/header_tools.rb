@@ -16,6 +16,9 @@ module Freeberry
     end
     
     module InstanceMethods
+      def default_header
+        header || build_header
+      end
     end
   end
 end

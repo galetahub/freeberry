@@ -10,8 +10,6 @@ module Freeberry
       module ClassMethods
         def self.extended(base)
           base.class_eval do
-            validates_presence_of :headerable_type, :headerable_id
-    
             belongs_to :headerable, :polymorphic => true
           end
         end
