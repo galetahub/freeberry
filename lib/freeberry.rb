@@ -9,6 +9,7 @@ module Freeberry
   autoload :ModelFilter,          'freeberry/model_filter'
   autoload :Transliteration,      'freeberry/transliteration'
   autoload :AccessibleAttributes, 'freeberry/accessible_attributes'
+  autoload :Utils,                'freeberry/utils'
   
   # Controllers
   module Controllers
