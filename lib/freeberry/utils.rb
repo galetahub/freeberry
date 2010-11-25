@@ -6,7 +6,7 @@ module Freeberry
         extension = File.extname(filename)
         basename = filename.gsub(/#{extension}$/, "")
         
-        [filename.parameterize('_'), extension].join.downcase
+        [basename.parameterize('_'), extension].join.downcase
       end
       
       def form_field(form_name, field_name, column, options={})
