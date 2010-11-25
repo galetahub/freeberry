@@ -8,7 +8,7 @@ module Freeberry
         # Send current_user to Declarative authorization module
         base.before_filter :set_current_user
         
-        base.helper_method :content_manager?, :current_client, :client_logged_in?, :account_signed_in?
+        base.helper_method :content_manager?
       end
     
       module ClassMethods
@@ -48,28 +48,6 @@ module Freeberry
         
         def content_manager?
           user_signed_in? && current_user.admin?
-        end
-        
-        # For RPXNow
-        def client_logged_in?
-          !!current_client
-        end
-        
-        def current_client=(new_client)
-          session[:client_id] = new_client ? new_client.id : nil
-          @current_client = new_client || false
-        end
-        
-        def current_client
-          @current_client ||= client_login_from_session unless @current_client == false
-        end
-        
-        def client_login_from_session
-          self.current_client = RpxClient.find_by_id(session[:client_id]) if session[:client_id]
-        end
-        
-        def account_signed_in?
-          user_signed_in? || client_logged_in?
         end
       end
     end
