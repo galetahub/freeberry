@@ -5,7 +5,12 @@ class Comment < ActiveRecord::Base
   
   validates :content, :presence => true, :length => { :maximum => 500 }
   validates :commentable_type, :presence => true, :inclusion => { :in => %w( Post Article ) }         
-  validates :author_type, :inclusion => { :in => %w( User Client ) }, :allow_blank => true
+  validates :author_type, :inclusion => { :in => %w( User Account ) }, :allow_blank => true
+  
+  validates :user_name, :presence => true, :length => { :maximum => 100 }, 
+            :format => { :with => /\A[^[:cntrl:]\\<>\/&]*\z/ }
+  validates :user_email, :presence => true, :length => { :within => 6..100 }, 
+            :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
   
   attr_accessible :user_name, :user_email, :content, :is_follow
 

@@ -13,11 +13,6 @@ module Freeberry
             belongs_to :commentable, :polymorphic => true, :counter_cache => true
             belongs_to :author, :polymorphic => true
             
-            validates :user_name, :presence => true, :length => { :maximum => 100 }, 
-                      :format => { :with => /\A[^[:cntrl:]\\<>\/&]*\z/ }
-            validates :user_email, :presence => true, :length => { :within => 6..100 }, 
-                      :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
-            
             before_validation :make_author
             
             scope :recently, order("#{quoted_table_name}.created_at DESC")
