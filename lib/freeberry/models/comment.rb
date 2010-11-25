@@ -40,9 +40,9 @@ module Freeberry
         protected
     
           def make_author
-          	unless self.author.nil?
-            	self.user_email = self.author.email if self.author.respond_to?(:email)
-            	self.user_name = self.author.name if self.author.respond_to?(:name)
+          	unless author.nil?
+            	self.user_email = author.email if author.respond_to?(:email)
+            	self.user_name = author.name if author.respond_to?(:name)
           	end
           end
       end

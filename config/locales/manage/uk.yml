@@ -201,7 +201,7 @@ uk:
         title_desc: "за назвою за спаданням"
         title_asc: "за назвою за зростанням"
     
-    sort:
+    sort_columns:
       created_at_desc: "за датою за спаданням"
       created_at_asc: "за датою за зростанням"
       title_desc: "за назвою за спаданням"

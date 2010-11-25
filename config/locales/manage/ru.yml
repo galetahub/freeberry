@@ -201,7 +201,7 @@ ru:
         title_desc: "по названию по убыванию"
         title_asc: "по названию по возрастанию"
     
-    sort:
+    sort_columns:
       created_at_desc: "по дате по убыванию"
       created_at_asc: "по дате по возрастанию"
       title_desc: "по названию по убыванию"
