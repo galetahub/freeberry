@@ -5,7 +5,7 @@
     <%%= cookie_content_tag(:div, :id=>"block_filter", :class=>"filt") do %>
       <%%= form_for @search, :as => :search, :url=>manage_<%= plural_name %>_path, :html=>{:method=>:get, :id=>"form_filter"} do |f| %>
         <% model.attributes.each do |attribute, value| -%>
-          <%%= f.label :<%= attribute %>, t('activerecord.attributes.<%= singular_name %>.<%= attribute %>') %>
+          <%%= f.label :<%= attribute %>, t('<%= singular_name %>.<%= attribute %>', :scope => [:activerecord, :attributes]) %>
           <%%= f.text_field :<%= attribute %>, :class=>"text" %>
         <% end -%>
           
@@ -22,8 +22,8 @@
     <div class="select"><%%= link_to_function t("manage.<%= plural_name %>.sort.#{@search.order_column}_#{@search.order_type}"), "SelectList.toggle(event)", :class=>"corn", :id=>'sort_select' %></div>
     <div id='sort_select_list' class="select-list" style='display:none;'>
       <% model.attributes.each do |attribute, value| %>
-      <%%= link_to_sort(t('manage.<%= plural_name %>.sort.<%= attribute %>_desc'),:name => <%= attribute.inspect %>, :order_type => 'desc') %>
-      <%%= link_to_sort(t('manage.<%= plural_name %>.sort.<%= attribute %>_asc'), :name => <%= attribute.inspect %>, :order_type => 'asc') %>
+      <%%= link_to_sort(t('<%= plural_name %>.<%= attribute %>_desc', :scope => [:manage, :sort], :default => :<%= attribute %>_desc), :name => <%= attribute.inspect %>, :order_type => 'desc') %>
+      <%%= link_to_sort(t('<%= plural_name %>.<%= attribute %>_asc', :scope => [:manage, :sort], :default => :<%= attribute %>_asc), :name => <%= attribute.inspect %>, :order_type => 'asc') %>
       <% end %>
     </div>
   </div>
