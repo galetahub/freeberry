@@ -5,14 +5,18 @@ class Comment < ActiveRecord::Base
   
   validates :content, :presence => true, :length => { :maximum => 500 }
   validates :commentable_type, :presence => true, :inclusion => { :in => %w( Post Article ) }         
-  validates :author_type, :inclusion => { :in => %w( User Account ) }, :allow_blank => true
+  validates :author_type, :inclusion => { :in => %w( User FreeberryAuth::Account ) }, :allow_blank => true
   
-  validates :user_name, :presence => true, :length => { :maximum => 100 }, 
-            :format => { :with => /\A[^[:cntrl:]\\<>\/&]*\z/ }
-  validates :user_email, :presence => true, :length => { :within => 6..100 }, 
-            :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
+  with_options :if => :anonymous? do |anonymous|
+    anonymous.validates :user_name, :length => { :maximum => 100 }, :presence => true,
+              :format => { :with => /\A[^[:cntrl:]\\<>\/&]*\z/ }
+    anonymous.validates :user_email, :length => { :within => 6..100 }, :presence => true,
+              :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
+  end
   
   attr_accessible :user_name, :user_email, :content, :is_follow
+
+  #after_create :send_notifiers
 
   auto_html_for :content do
     html_escape
@@ -24,4 +28,21 @@ class Comment < ActiveRecord::Base
     simple_format
     sanitize
   end
+  
+  def anonymous?
+    author.nil?
+  end
+  
+  def siblings
+    self.class.siblings_for(self)
+  end
+  
+  protected
+  
+    def send_notifiers
+      emails = [ commentable.user.try(:email) ]
+      emails.concat(siblings.follows.select("user_email").map(&:user_email).uniq)
+      emails.delete_if{ |email| email.blank? || email == user_email }
+      emails.each { |email| Notifier.comment(email, self).deliver }
+    end
 end
