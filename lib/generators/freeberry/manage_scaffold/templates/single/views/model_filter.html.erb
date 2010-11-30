@@ -19,7 +19,7 @@
   </div>
   <div class="sort">
   	<label><%%= t('manage.sort') %></label>
-    <div class="select"><%%= link_to_function t("manage.<%= plural_name %>.sort.#{@search.order_column}_#{@search.order_type}"), "SelectList.toggle(event)", :class=>"corn", :id=>'sort_select' %></div>
+    <div class="select"><%%= link_to_function t("<%= plural_name %>.#{@search.order_column}_#{@search.order_type}", :scope => [:manage, :sort_columns], :default => "#{@search.order_column}_#{@search.order_type}"), "SelectList.toggle(event)", :class=>"corn", :id=>'sort_select' %></div>
     <div id='sort_select_list' class="select-list" style='display:none;'>
       <% model.attributes.each do |attribute, value| %>
       <%%= link_to_sort(t('<%= plural_name %>.<%= attribute %>_desc', :scope => [:manage, :sort_columns], :default => :<%= attribute %>_desc), :name => <%= attribute.inspect %>, :order_type => 'desc') %>
