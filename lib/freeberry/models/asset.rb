@@ -17,6 +17,10 @@ module Freeberry
             before_create :read_dimensions, :parameterize_filename
           end
         end
+        
+        def move_to(index, id)
+          update_all(["sort_order = ?", index], ["id = ?", id.to_i])
+        end
       end
       
       module InstanceMethods

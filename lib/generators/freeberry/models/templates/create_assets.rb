@@ -12,6 +12,7 @@ class FreeberryCreateAssets < ActiveRecord::Migration
 		  
 		  t.integer :locale, :limit => 1, :default => 0
 		  t.integer :user_id
+		  t.integer :sort_order, :default => 0
 		  
       t.timestamps
     end

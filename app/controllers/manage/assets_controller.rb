@@ -1,10 +1,11 @@
 class Manage::AssetsController < Manage::BaseController
-  before_filter :find_klass, :only => [:create]
+  before_filter :find_klass, :only => [:create, :sort]
   before_filter :find_asset, :only => [:destroy]
+  
+  filter_access_to :sort, :require => :update
   
   respond_to :html, :xml
   
-  # POST /manage/assets
   def create
     @asset ||= @klass.new(params[:asset])
     
@@ -21,11 +22,20 @@ class Manage::AssetsController < Manage::BaseController
     end
   end
   
-  # DELETE /manage/assets/1
   def destroy
     @asset.destroy
     
     respond_with(@asset) do |format|
+      format.html { head :ok }
+    end
+  end
+  
+  def sort
+    params[:picture].each_with_index do |id, index|
+      @klass.move_to(index, id)
+    end
+    
+    respond_with(@klass) do |format|
       format.html { head :ok }
     end
   end

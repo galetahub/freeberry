@@ -16,8 +16,10 @@ Rails.application.routes.draw do
 		  resources :posts
 		end
 		
+		resources :assets, :only => [:create, :destroy] do
+      post :sort, :on => :collection
+    end
+		
     resources :settings
-    resources :pictures
-    resources :assets, :only => [:create, :destroy]
   end
 end

@@ -33,4 +33,6 @@ class Picture < Asset
 	validates_attachment_content_type :data, :content_type => Freeberry::IMAGE_TYPES
 	
 	attr_accessible :data
+	
+	default_scope order("#{quoted_table_name}.sort_order")
 end
