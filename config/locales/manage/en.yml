@@ -202,6 +202,7 @@ en:
         title_asc: "by title ascending"
     
     sort_columns:
+      _: "-"
       created_at_desc: "by date descending"
       created_at_asc: "date ascending"
       title_desc: "by title descending"
