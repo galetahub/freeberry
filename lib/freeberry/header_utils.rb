@@ -1,6 +1,6 @@
 # encoding: utf-8
 module Freeberry
-  module HeaderTools
+  module HeaderUtils
     def self.included(base)
       base.send(:extend, ClassMethods)
       base.send(:include, InstanceMethods)

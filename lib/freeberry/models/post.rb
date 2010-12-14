@@ -9,7 +9,7 @@ module Freeberry
       
       module ClassMethods
         def self.extended(base)
-          base.send(:include, HeaderTools)
+          base.send(:include, HeaderUtils)
           base.class_eval do
             belongs_to :structure
             has_many :comments, :as => :commentable, :dependent => :delete_all

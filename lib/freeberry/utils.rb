@@ -18,7 +18,7 @@ module Freeberry
           when :datetime, :date, :timestamp, :time then 
             options[:extra_html] ||= "<script type='text/javascript'>
               $(function() {
-	              $('#_#{field_name}').datepicker({
+	              $('\##{form_name}_#{field_name}').datepicker({
 		              numberOfMonths: 1,
 		              dateFormat: 'dd.mm.yy'
 	              });

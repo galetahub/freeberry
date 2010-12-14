@@ -9,7 +9,7 @@ module Freeberry
       
       module ClassMethods
         def self.extended(base)
-          base.send(:include, HeaderTools)
+          base.send(:include, HeaderUtils)
           base.class_eval do
             enumerated_attribute :structure_type, :id_attribute => :kind
             enumerated_attribute :position_type, :id_attribute => :position

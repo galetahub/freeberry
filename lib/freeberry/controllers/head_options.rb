@@ -7,25 +7,26 @@ module Freeberry
         base.send :helper_method, :head_options if base.respond_to? :helper_method
       end
       
-      def head_options(record, options={})
+      def head_options(record, options = {})
         return if record.nil?
         
-        header = nil
-        header = record.header if record.respond_to?(:header)
+        options = { :spliter => " | " }.merge(options)
+        
+        header = record.respond_to?(:header) ? record.header : nil
         
         @view_title = record.title if record.respond_to?(:title)
-        @view_title ||= t('page.title')
+        @view_title ||= I18n.t('page.title')
         
         # title
         page_title = []
 		    page_title << options[:title] if options.key?(:title)
 		    page_title << ((header.nil? || header.title.blank?) ? record.title : header.title)
-		    page_title << t('page.title') if options[:append_title]
+		    page_title << I18n.t('page.title') if options[:append_title]
 		    page_title.flatten!
 		    page_title.compact!
 		    page_title.uniq!
 		
-		    @page_title = page_title.join(" | ")
+		    @page_title = page_title.join(options[:spliter])
 		
 		    # keywords
 		    keywords = record.keywords.join(', ') if record.respond_to?(:keywords)

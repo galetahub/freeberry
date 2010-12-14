@@ -24,7 +24,7 @@ module Freeberry
       ::ActionController::Base.send :include, Freeberry::Controllers::AuthorizedSystem
       ::ActionController::Base.send :include, Freeberry::Controllers::HeadOptions
     
-      ::ActionView::Base.send :include, Freeberry::Controllers::HelperTools
+      ::ActionView::Base.send :include, Freeberry::Controllers::HelperUtils
     end
     
     rake_tasks do

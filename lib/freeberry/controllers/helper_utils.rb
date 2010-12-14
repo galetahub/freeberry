@@ -1,6 +1,6 @@
 module Freeberry
   module Controllers
-    module HelperTools
+    module HelperUtils
       
       def title(content)
 	      content_for(:title) { content } unless content.blank?

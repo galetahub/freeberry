@@ -4,14 +4,19 @@ module Freeberry
       def self.included(base)
         base.send(:extend, ClassMethods)
         base.send(:include, InstanceMethods)
-        
-        # Send current_user to Declarative authorization module
-        base.before_filter :set_current_user
-        
-        base.helper_method :content_manager?
       end
     
       module ClassMethods
+        def self.extended(base)
+          base.class_eval do
+            skip_before_filter :set_current_user
+            
+            # Send current_user to Declarative authorization module
+            before_filter :set_current_user
+        
+            helper_method :content_manager?
+          end
+        end
       end
 
       module InstanceMethods

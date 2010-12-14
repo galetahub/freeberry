@@ -5,7 +5,7 @@ module Freeberry
   autoload :SystemSettings,       'freeberry/system_settings'
   autoload :MysqlUtils,           'freeberry/mysql_utils'
   autoload :Settingslogic,        'freeberry/settingslogic'
-  autoload :HeaderTools,          'freeberry/header_tools'
+  autoload :HeaderUtils,          'freeberry/header_utils'
   autoload :ModelFilter,          'freeberry/model_filter'
   autoload :Transliteration,      'freeberry/transliteration'
   autoload :AccessibleAttributes, 'freeberry/accessible_attributes'
@@ -15,7 +15,7 @@ module Freeberry
   module Controllers
     autoload :AuthorizedSystem, 'freeberry/controllers/authorized_system'
     autoload :HeadOptions,      'freeberry/controllers/head_options'
-    autoload :HelperTools,      'freeberry/controllers/helper_tools'
+    autoload :HelperUtils,      'freeberry/controllers/helper_utils'
   end
   
   # Models
