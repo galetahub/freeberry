@@ -37,12 +37,7 @@ module Freeberry
 	      def roles_attributes=(value)
           options = value || {}
           options.each do |k, v|
-            r = self.roles.detect { |r| r.role_type.id == k.to_i }
-            if v.to_i == 0
-              self.roles.delete(r) unless r.nil?
-            else
-              r ||= self.roles.build(:role_type => ::RoleType.find(k.to_i))
-            end
+            create_or_destroy_role(k.to_i, v.to_i == 1)
           end
         end
 	
@@ -64,7 +59,16 @@ module Freeberry
         end
         
         protected
-    
+          
+          def create_or_destroy_role(role_id, need_create = true)
+            role = self.roles.detect { |r| r.role_type.id == role_id }
+            if need_create
+              role ||= self.roles.build(:role_type => ::RoleType.find(role_id))
+            elsif !role.nil?
+              self.roles.delete(role)
+            end
+          end
+          
           def make_login
 	          return if self.email.blank?
 	          
