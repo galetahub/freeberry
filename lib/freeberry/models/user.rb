@@ -17,6 +17,8 @@ module Freeberry
             
             scope :admins, joins(:roles).where(["`roles`.role_type = ?", ::RoleType.admin.id])
             scope :with_role, proc {|role| joins(:roles).where(["`roles`.role_type = ?", role.id]) }
+            
+            before_create :set_role
           end
         end
       end
@@ -59,6 +61,10 @@ module Freeberry
         end
         
         protected
+          
+          def set_role
+            self.roles.build(:role_type => ::RoleType.default) if self.roles.blank?
+          end
           
           def create_or_destroy_role(role_id, need_create = true)
             role = self.roles.detect { |r| r.role_type.id == role_id }
