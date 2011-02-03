@@ -63,7 +63,7 @@ module Freeberry
         protected
           
           def set_role
-            self.roles.build(:role_type => ::RoleType.default) if self.roles.blank?
+            self.roles.build(:role_type => ::RoleType.default) if self.roles.empty?
           end
           
           def create_or_destroy_role(role_id, need_create = true)
