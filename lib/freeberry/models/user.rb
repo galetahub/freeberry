@@ -18,7 +18,7 @@ module Freeberry
             scope :admins, joins(:roles).where(["`roles`.role_type = ?", ::RoleType.admin.id])
             scope :with_role, proc {|role| joins(:roles).where(["`roles`.role_type = ?", role.id]) }
             
-            before_create :set_role
+            before_create :set_default_role, :if => :roles_empty?
           end
         end
       end
@@ -34,6 +34,10 @@ module Freeberry
 	
 	      def has_role?(role_name)
 	        role_symbols.include?(role_name.to_sym)
+	      end
+	      
+	      def roles_empty?
+	        self.roles.empty?
 	      end
 	
 	      def roles_attributes=(value)
@@ -62,8 +66,10 @@ module Freeberry
         
         protected
           
-          def set_role
-            self.roles.build(:role_type => ::RoleType.default) if self.roles.empty?
+          def set_default_role
+            unless has_role?(:default)
+              self.roles.build(:role_type => ::RoleType.default)
+            end
           end
           
           def create_or_destroy_role(role_id, need_create = true)
