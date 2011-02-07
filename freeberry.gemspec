@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{freeberry}
-  s.version = "0.2.7"
+  s.version = "0.2.8"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Igor Galeta", "Pavlo Galeta"]
@@ -39,7 +39,6 @@ Gem::Specification.new do |s|
     "config/routes.rb",
     "lib/freeberry.rb",
     "lib/freeberry/accessible_attributes.rb",
-    "lib/freeberry/controllers/authorized_system.rb",
     "lib/freeberry/controllers/head_options.rb",
     "lib/freeberry/controllers/helper_utils.rb",
     "lib/freeberry/core_ext.rb",
@@ -70,7 +69,6 @@ Gem::Specification.new do |s|
     "lib/generators/freeberry/base/USAGE",
     "lib/generators/freeberry/base/base_generator.rb",
     "lib/generators/freeberry/base/templates/config/application.yml",
-    "lib/generators/freeberry/base/templates/config/authorization_rules.rb",
     "lib/generators/freeberry/base/templates/config/database.yml",
     "lib/generators/freeberry/base/templates/config/freeberry.rb",
     "lib/generators/freeberry/base/templates/config/logrotate-config",
@@ -296,6 +294,7 @@ Gem::Specification.new do |s|
     "lib/generators/freeberry/models/templates/create_roles.rb",
     "lib/generators/freeberry/models/templates/create_structures.rb",
     "lib/generators/freeberry/models/templates/create_users.rb",
+    "lib/generators/freeberry/models/templates/models/ability.rb",
     "lib/generators/freeberry/models/templates/models/asset.rb",
     "lib/generators/freeberry/models/templates/models/attachment_file.rb",
     "lib/generators/freeberry/models/templates/models/avatar.rb",
