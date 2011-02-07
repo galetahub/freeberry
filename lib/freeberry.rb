@@ -13,9 +13,8 @@ module Freeberry
   
   # Controllers
   module Controllers
-    autoload :AuthorizedSystem, 'freeberry/controllers/authorized_system'
-    autoload :HeadOptions,      'freeberry/controllers/head_options'
-    autoload :HelperUtils,      'freeberry/controllers/helper_utils'
+    autoload :HeadOptions, 'freeberry/controllers/head_options'
+    autoload :HelperUtils, 'freeberry/controllers/helper_utils'
   end
   
   # Models

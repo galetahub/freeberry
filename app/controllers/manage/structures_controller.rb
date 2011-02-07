@@ -5,8 +5,6 @@ class Manage::StructuresController < Manage::BaseController
     
   defaults :route_prefix => 'manage'
   
-  filter_access_to :move, :require => :update
-  
   cache_sweeper :structure_sweeper, :only=>[:create, :update, :destroy, :move]
   
   def create

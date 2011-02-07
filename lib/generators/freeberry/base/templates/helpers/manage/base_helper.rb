@@ -1,4 +1,8 @@
 module Manage::BaseHelper
+  def content_manager?
+    user_signed_in? && current_user.admin?
+  end
+        
   def link_to_unless_current_span2(name, options = {}, html_options = {}, &block)
     if current_page?(options)
 			if block_given?

@@ -21,9 +21,7 @@ module Freeberry
     end
     
     config.after_initialize do
-      ::ActionController::Base.send :include, Freeberry::Controllers::AuthorizedSystem
       ::ActionController::Base.send :include, Freeberry::Controllers::HeadOptions
-    
       ::ActionView::Base.send :include, Freeberry::Controllers::HelperUtils
     end
     

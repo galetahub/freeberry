@@ -2,6 +2,7 @@ class Manage::PostsController < Manage::BaseController
   inherit_resources
   
   belongs_to :structure
+  load_and_authorize_resource :post, :through => :structure
   
   before_filter :make_filter, :only => [:index]
   

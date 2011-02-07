@@ -10,14 +10,13 @@ For more instruction see {Wiki}[http://wiki.github.com/galetahub/freeberry].
 In your Gemfile:
   
   gem 'devise', '1.1.5'
-  gem 'paperclip', '2.3.7'
+  gem 'paperclip', '2.3.8'
   gem 'nokogiri', '1.4.4'
-  gem 'declarative_authorization', '0.5.1'
-  gem 'responders', '0.6.2'
-  gem 'inherited_resources', '1.1.2'
+  gem 'cancan', '1.5.1'
+  gem 'inherited_resources', '1.2.1'
   gem 'haddock', '0.2.2'
   gem "mime-types", '1.16', :require => 'mime/types'
-  gem "ckeditor", '3.4.3.pre'
+  gem "ckeditor", '3.5.0'
   
   gem 'awesome_nested_set', :git => 'git://github.com/galetahub/awesome_nested_set.git'
   gem 'will_paginate', :git => 'git://github.com/galetahub/will_paginate.git', :branch => 'rails3'
@@ -122,4 +121,4 @@ Manage scaffold:
 
 Example goes here.
 
-Copyright (c) 2010 Brainberry, released under the MIT license
+Copyright (c) 2010-2011 Brainberry, released under the MIT license

@@ -2,8 +2,6 @@ class Manage::AssetsController < Manage::BaseController
   before_filter :find_klass, :only => [:create, :sort]
   before_filter :find_asset, :only => [:destroy]
   
-  filter_access_to :sort, :require => :update
-  
   respond_to :html, :xml
   
   def create
