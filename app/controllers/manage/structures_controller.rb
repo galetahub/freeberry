@@ -1,10 +1,11 @@
 class Manage::StructuresController < Manage::BaseController
   inherit_resources
-  
-  before_filter :find_root, :only=>[:index]  
-    
   defaults :route_prefix => 'manage'
   
+  before_filter :find_root, :only=>[:index]  
+  
+  load_and_authorize_resource
+    
   cache_sweeper :structure_sweeper, :only=>[:create, :update, :destroy, :move]
   
   def create

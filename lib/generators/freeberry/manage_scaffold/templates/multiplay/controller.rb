@@ -1,11 +1,11 @@
 class Manage::<%= controller_class_name %>Controller < Manage::BaseController
   inherit_resources
-  
+  defaults :route_prefix => 'manage'  
   belongs_to :<%= parent_singular_name %>
   
   before_filter :make_filter, :only=>[:index]
   
-  defaults :route_prefix => 'manage'
+  load_and_authorize_resource :<%= parent_singular_name %>
   
   def create
     create!{ manage_<%= parent_singular_name %>_<%= plural_name %>_path(@<%= parent_singular_name %>.id) }

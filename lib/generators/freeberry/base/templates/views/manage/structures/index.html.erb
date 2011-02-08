@@ -5,11 +5,11 @@
         <%= link_to @structure.title, root_path, :class=>"dark-arr", :id=>"a#{@structure.id}" %>
         
         <div class="act-bl">
-          <% permitted_to? :create, :manage_structures do %>
+          <% if can? :create, Structure, :context => :manage %>
             <%= link_to t('manage.buttons.create_structure'), new_manage_structure_path, :class=>"create" %>
           <% end %>
           
-          <% permitted_to? :update, @structure, :context => :manage_structures do %>
+          <% if can? :update, @structure, :context => :manage %>
             <%= link_to image_tag("manage/ico_edit.gif", :title=>t('manage.edit')), edit_manage_structure_page_path(@structure.id), :class=>"icons" %>
             <%= link_to image_tag("manage/ico_settings.gif", :title=>t('manage.label_settings')), edit_manage_structure_path(@structure.id), :class=>"icons" %>
           <% end %>

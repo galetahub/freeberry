@@ -7,7 +7,7 @@
             <%= link_to @structure.title, manage_structure_posts_path(@structure.id), :class=>"dark-text" %>
             
             <div class="act-bl">
-              <% permitted_to? :create, :manage_posts do %>
+              <% if can? :create, Post, :context => :manage %>
                 <%= link_to t('manage.add'), new_manage_structure_post_path(@structure.id), :class=>"create" %>
               <% end %>
             </div>

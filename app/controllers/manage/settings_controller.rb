@@ -1,4 +1,6 @@
 class Manage::SettingsController < Manage::BaseController
+  authorize_resource :class => false
+
   # GET /manage/settings
   def index
   end

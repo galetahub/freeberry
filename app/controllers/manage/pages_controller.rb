@@ -3,6 +3,8 @@ class Manage::PagesController < Manage::BaseController
   
   cache_sweeper :page_sweeper, :only => [:create, :update, :destroy]
   
+  authorize_resource
+  
   # GET /manage/structures/1/page/edit
   def edit
     @page = @structure.page || @structure.build_page(:title=>@structure.title)

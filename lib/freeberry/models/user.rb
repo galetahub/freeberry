@@ -51,6 +51,26 @@ module Freeberry
           (roles || []).map {|r| r.to_sym}
         end
         
+        def current_role
+          self.roles.first
+        end
+        
+        def role_type_id
+          if current_role
+            current_role.role_type.id
+          end
+        end
+        
+        def role_type_id=(value)
+          role_id = value.blank? ? nil : value.to_i
+          
+          if ::RoleType.all.map(&:id).include?(role_id)
+            ::RoleType.all.each do |role_type|
+              create_or_destroy_role(role_type.id, role_type.id == role_id)
+            end
+          end
+        end
+        
         def state
           return 'active' if active?
           return 'register' unless confirmed?

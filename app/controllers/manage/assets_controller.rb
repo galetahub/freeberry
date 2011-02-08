@@ -4,6 +4,8 @@ class Manage::AssetsController < Manage::BaseController
   
   respond_to :html, :xml
   
+  authorize_resource
+  
   def create
     @asset ||= @klass.new(params[:asset])
     

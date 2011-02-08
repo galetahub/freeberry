@@ -3,7 +3,7 @@
     <div class="r-corn">
       <%= link_to structure.title, edit_structure_record_path(structure), :class=>(structure.descendants_count.zero? ? "dark-text" : "dark-arr"), :id=>"a#{structure.id}" %>
       <div class="act-bl" style="display:none;">
-        <% permitted_to? :update, structure, :context => :manage_structures do %>
+        <% if can? :update, structure, :context => :manage %>
           <%= link_to image_tag("manage/ico_down.gif", :alt=>t('manage.position.down'), :title=>t('manage.position.down')), 
               move_manage_structure_path(:id => structure.id, :direction => 'down', :format => :json),
               :remote => true,
@@ -18,7 +18,7 @@
           <%= link_to image_tag("manage/ico_settings.gif", :alt=>t('manage.label_settings'), :title=>t('manage.label_settings')), edit_manage_structure_path(:id=>structure.id), :class=>"icons" %>
         <% end %>
         
-        <% permitted_to? :delete, structure, :context => :manage_structures do %>
+        <% if can? :delete, structure, :context => :manage %>
           <%= link_to image_tag("manage/ico_del.gif", :alt=>t('manage.delete'), :title=>t('manage.delete')), manage_structure_path(:id=>structure.id), 
               :method=>:delete, :confirm=>t("manage.confirm_delete"), :class=>"icons" %>
         <% end %>
@@ -32,4 +32,3 @@
     <% end %>
   <% end %>
 <% end %>
-

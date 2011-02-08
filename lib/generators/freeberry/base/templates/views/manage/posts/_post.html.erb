@@ -1,10 +1,10 @@
 <%= content_tag(:div, :id => dom_id(post), :class=>"dinamic-bl") do %>
   <div class="act-bl" style="display:none;">
-    <% permitted_to? :update, post, :context => :manage_posts do %>
+    <% if can? :update, post, :context => :manage %>
       <%= link_to image_tag("manage/ico_edit.gif", :title=>t('manage.edit')), edit_manage_structure_post_path(@structure.id, post.id), :class=>"icons" %>
     <% end %>
     
-    <% permitted_to? :delete, post, :context => :manage_posts do %>
+    <% if can? :delete, post, :context => :manage %>
       <%= link_to image_tag("manage/ico_del.gif", :title=>t('manage.delete')), manage_structure_post_path(@structure.id, post.id), 
             :method=>:delete, :confirm=>t("manage.confirm_delete"), :class=>"icons" %>
     <% end %>
