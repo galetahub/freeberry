@@ -1,5 +1,6 @@
 class Manage::PagesController < Manage::BaseController
   before_filter :find_structure
+  before_filter :find_page
   
   cache_sweeper :page_sweeper, :only => [:create, :update, :destroy]
   
@@ -7,8 +8,6 @@ class Manage::PagesController < Manage::BaseController
   
   # GET /manage/structures/1/page/edit
   def edit
-    @page = @structure.page || @structure.build_page(:title=>@structure.title)
-    
     respond_with(@page) do |format|
       format.html { render :action => (@page.new_record? ? 'new' : 'edit') }
     end
@@ -16,17 +15,13 @@ class Manage::PagesController < Manage::BaseController
   
   # POST /manage/structures/1/page
   def create
-    @page = @structure.build_page(params[:page])
-    @page.save
-    
+    @page.update_attributes(params[:page])
     respond_with(@page, :location => manage_structures_path)
   end
   
   # PUT /manage/structures/1/page
   def update
-    @page = @structure.page
     @page.update_attributes(params[:page])
-    
     respond_with(@page, :location => manage_structures_path)
   end
   
@@ -34,5 +29,9 @@ class Manage::PagesController < Manage::BaseController
   
     def find_structure
       @structure = Structure.find(params[:structure_id])
+    end
+    
+    def find_page
+      @page = @structure.page || @structure.build_page(:title => @structure.title)
     end
 end

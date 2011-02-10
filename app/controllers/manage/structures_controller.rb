@@ -36,6 +36,6 @@ class Manage::StructuresController < Manage::BaseController
     end
     
     def collection
-      @structures ||= end_of_association_chain.with_depth(1).find(:all)
+      @structures = (@structures || end_of_association_chain).with_depth(1)
     end
 end

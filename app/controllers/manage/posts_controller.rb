@@ -1,14 +1,12 @@
 class Manage::PostsController < Manage::BaseController
   inherit_resources
-  
-  belongs_to :structure
-  load_and_authorize_resource :post, :through => :structure
-  
-  before_filter :make_filter, :only => [:index]
-  
   defaults :route_prefix => 'manage'
   actions :all, :except => [:show]
+  belongs_to :structure
   
+  load_and_authorize_resource :post, :through => :structure
+  
+  before_filter :make_filter, :only => [:index] 
   cache_sweeper :post_sweeper, :only => [:create, :update, :destroy]
   
   def create
@@ -33,7 +31,7 @@ class Manage::PostsController < Manage::BaseController
       options = { :page => params[:page], :per_page => 20 }
       options.update @search.filter
       
-      @posts ||= end_of_association_chain.paginate(options)
+      @posts = (@posts || end_of_association_chain).paginate(options)
     end
     
     def make_filter
