@@ -34,7 +34,6 @@ module Freeberry
     
     def copy_configurations
       copy_file('config/words', 'config/words')
-      copy_file('config/authorization_rules.rb', 'config/authorization_rules.rb')
       copy_file('config/seeds.rb', 'db/seeds.rb')
       copy_file('config/freeberry.rb', 'config/initializers/freeberry.rb')
       
