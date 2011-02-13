@@ -52,7 +52,25 @@ module Freeberry
       end
       
       def klass
+        # First priority is the namespaced modek, e.g. User::Group
+        @klass ||= begin
+          namespaced_class = name.singularize
+          namespaced_class.constantize
+        rescue NameError
+          nil
+        end
+        
+        # Second priority the camelcased c, i.e. UserGroup
+        @klass ||= begin
+          camelcased_class = name.gsub('::', '').singularize
+          camelcased_class.constantize
+        rescue NameError
+          nil
+        end
+        
         @klass ||= model_name.constantize
+        
+        @klass
       end
       
       def model
@@ -60,12 +78,12 @@ module Freeberry
       end
       
       def model_name
-        @model_name ||= singular_name.camelize
+        @model_name ||= name.camelize
         @model_name
       end
       
       def controller_class_name
-        @controller_class_name ||= singular_name.pluralize.camelize
+        @controller_class_name ||= name.pluralize.camelize
       end
       
       def controller_file_name
