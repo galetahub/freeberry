@@ -1,8 +1,6 @@
 class Comment < ActiveRecord::Base
   include Freeberry::Models::Comment
   
-  using_access_control
-  
   validates :content, :presence => true, :length => { :maximum => 500 }
   validates :commentable_type, :presence => true, :inclusion => { :in => %w( Post Article ) }         
   validates :author_type, :inclusion => { :in => %w( User FreeberryAuth::Account ) }, :allow_blank => true

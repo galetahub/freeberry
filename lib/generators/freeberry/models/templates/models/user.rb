@@ -35,8 +35,6 @@
 class User < ActiveRecord::Base
   include Freeberry::Models::User
   
-  using_access_control
-  
   # Include default devise modules.
   devise :database_authenticatable, :confirmable, :lockable, :timeoutable,
          :recoverable, :rememberable, :trackable, :validatable
