@@ -9,15 +9,14 @@ module Freeberry
       
       module ClassMethods
         def self.extended(base)
-          base.class_eval do
-            before_validation :make_login
-        
+          base.class_eval do        
             has_many :roles, :dependent => :delete_all
             has_one :avatar, :as => :assetable, :dependent => :destroy, :autosave => true
             
-            scope :admins, joins(:roles).where(["`roles`.role_type = ?", ::RoleType.admin.id])
-            scope :with_role, proc {|role| joins(:roles).where(["`roles`.role_type = ?", role.id]) }
+            scope :with_role, lambda {|role| joins(:roles).where(["`roles`.role_type = ?", role.id]) }
+            scope :admins, with_role(::RoleType.admin)
             
+            before_validation :generate_login, :if => :has_login?
             before_create :set_default_role, :if => :roles_empty?
           end
         end
@@ -39,7 +38,11 @@ module Freeberry
 	      def roles_empty?
 	        self.roles.empty?
 	      end
-	
+	      
+	      def has_login?
+	        respond_to?(:login)
+	      end
+	      	
 	      def roles_attributes=(value)
           options = value || {}
           options.each do |k, v|
@@ -101,16 +104,12 @@ module Freeberry
             end
           end
           
-          def make_login
-	          return if self.email.blank?
-	          
-          	if self.login.blank?
-          		tmp_login = self.email.split('@').first
-          		tmp_login ||= ActiveSupport::SecureRandom.hex(7)
-          		tmp_login = tmp_login.parameterize.downcase.gsub('.', '_')
-          		tmp_login = [tmp_login, ActiveSupport::SecureRandom.hex(4)].join('_') unless self.class.find_by_login(tmp_login).nil?
-          		self.login = tmp_login
-          	end
+          def generate_login
+            self.login ||= begin
+              tmp_login = email.split('@').first unless email.blank?
+        		  tmp_login ||= ActiveSupport::SecureRandom.hex(7)
+        		  tmp_login.parameterize.downcase.gsub('.', '_')
+            end
           end
       end
     end
