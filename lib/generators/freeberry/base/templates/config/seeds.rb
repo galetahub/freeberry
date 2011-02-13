@@ -1,7 +1,4 @@
-def insert_user
-  # TurnOff Authorization system
-  Authorization.ignore_access_control(true)
-  
+def insert_user  
   # Path to words
   Haddock::Password.diction = Rails.root.join("config", "words")
   
@@ -12,12 +9,12 @@ def insert_user
   
   admin = User.new(:name=>'Administrator', :email=>'bugs@brainberry.com.ua',
                    :password=>password, :password_confirmation=>password)
-  admin.login = 'admin'
+  #admin.login = 'admin'
+  admin.roles.build(:role_type => RoleType.admin)
   admin.skip_confirmation!
   admin.save!
-  admin.roles.create(:role_type => RoleType.admin)
 
-  puts "Admin account: email: #{admin.email}, :password: #{admin.password}"
+  puts "Admin: #{admin.email}, #{admin.password}"
 end
 
 def insert_structures
