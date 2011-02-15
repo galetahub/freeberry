@@ -7,7 +7,7 @@ def insert_user
   Role.truncate_table
   password = Haddock::Password.generate
   
-  admin = User.new(:name=>'Administrator', :email=>'bugs@brainberry.com.ua',
+  admin = User.new(:name=>'Administrator', :email=>'dev@aimbulance.com',
                    :password=>password, :password_confirmation=>password)
   #admin.login = 'admin'
   admin.roles.build(:role_type => RoleType.admin)

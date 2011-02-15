@@ -1,6 +1,6 @@
 = Freeberry
 
-Brainberry Content Managment System
+Aimbulance Content Managment System
 For more instruction see {Wiki}[http://wiki.github.com/galetahub/freeberry].
 
 == Install
@@ -121,4 +121,4 @@ Manage scaffold:
 
 Example goes here.
 
-Copyright (c) 2010-2011 Brainberry, released under the MIT license
+Copyright (c) 2010-2011 Aimbulance, released under the MIT license

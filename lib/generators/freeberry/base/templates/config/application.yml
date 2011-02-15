@@ -1,4 +1,4 @@
 mailer:
   subject_prefix: "[<%= app_name %>] "
-  from: "no-reply@brainberry.ua"
-  reply_to: "info@brainberry.ua"
+  from: "no-reply@aimbulance.com"
+  reply_to: "info@aimbulance.com"

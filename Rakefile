@@ -30,7 +30,7 @@ begin
     gemspec.name = "freeberry"
     gemspec.version = Freeberry::Version.dup
     gemspec.summary = "Rails CRM System"
-    gemspec.description = "Freeberry is a Brainberry CRM System"
+    gemspec.description = "Freeberry is a Aimbulance CRM System"
     gemspec.email = "galeta.igor@gmail.com"
     gemspec.homepage = "https://github.com/galetahub/freeberry"
     gemspec.authors = ["Igor Galeta", "Pavlo Galeta"]
