@@ -1,5 +1,5 @@
 class Ability
-  include CanCan::Ability
+  include CanCanNamespace::Ability
   
   attr_accessor :context, :user
 
