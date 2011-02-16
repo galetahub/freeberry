@@ -29,7 +29,7 @@ class Manage::<%= controller_class_name %>Controller < Manage::BaseController
       options = { :page => params[:page], :per_page => 20 }
       options.update @search.filter
       
-      @<%= plural_name %> ||= end_of_association_chain.paginate(options)
+      @<%= plural_name %> ||= (@<%= plural_name %> || end_of_association_chain).paginate(options)
     end
     
     def make_filter
