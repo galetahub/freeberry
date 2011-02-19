@@ -5,7 +5,7 @@ class Manage::<%= controller_class_name %>Controller < Manage::BaseController
   
   before_filter :make_filter, :only=>[:index]
   
-  load_and_authorize_resource :<%= parent_singular_name %>
+  load_and_authorize_resource :<%= parent_singular_name %>, :class => <%= model_name %>
   
   def create
     create!{ manage_<%= parent_singular_name %>_<%= plural_name %>_path(@<%= parent_singular_name %>.id) }
@@ -29,7 +29,7 @@ class Manage::<%= controller_class_name %>Controller < Manage::BaseController
       options = { :page => params[:page], :per_page => 20 }
       options.update @search.filter
       
-      @<%= plural_name %> ||= (@<%= plural_name %> || end_of_association_chain).paginate(options)
+      @<%= plural_name %> = (@<%= plural_name %> || end_of_association_chain).paginate(options)
     end
     
     def make_filter

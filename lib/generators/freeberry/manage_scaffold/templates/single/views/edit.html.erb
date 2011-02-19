@@ -1,7 +1,7 @@
 <div class="edit-bl">
   <div class="bot-bg">
     <div class="block-title"><%%= t('manage.edit') %>:</div>
-    <%%= form_for @<%= singular_name %>, :as => :<%= singular_name %>, :url => manage_<%= singular_name %>_path(@<%= singular_name %>.id), :html=>{:multipart=>true, :method=>:put, :id=>'<%= singular_name %>_form'} do |f| -%>
+    <%%= form_for [:manage, @<%= singular_name %>], :html=>{:multipart=>true, :id=>'<%= singular_name %>_form'} do |f| -%>
       <%%= render :partial=>"manage/<%= plural_name %>/form", :object=>f %>
       
       <div style="padding: 20px 0px 10px 20px;" class="buts">
