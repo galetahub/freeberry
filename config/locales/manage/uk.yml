@@ -14,8 +14,8 @@ uk:
       
       structure:
         title: "Назва"
-        title_ru: "Назва <span>(рос.)</span>"
-        title_en: "Назва <span>(eng.)</span>"
+        title_ru: "Назва (рос.)"
+        title_en: "Назва (eng.)"
         parent_id: "Головна категорія"
         is_visible: "Відображати?"
         kind: "Тип сторінки"
@@ -24,32 +24,32 @@ uk:
       
       header:
         title: "Заголовок сторінки"
-        title_ru: "Заголовок сторінки <span>(рос.)</span>"
-        title_en: "Заголовок сторінки <span>(eng.)</span>"
+        title_ru: "Заголовок сторінки (рос.)"
+        title_en: "Заголовок сторінки (eng.)"
         keywords: "Ключові слова"
-        keywords_ru: "Ключові слова <span>(рос.)</span>"
-        keywords_en: "Ключові слова <span>(eng.)</span>"
+        keywords_ru: "Ключові слова (рос.)"
+        keywords_en: "Ключові слова (eng.)"
         description: "Опис сторінки"
-        description_ru: "Опис сторінки <span>(рос.)</span>"
-        description_en: "Опис сторінки <span>(eng.)</span>"
+        description_ru: "Опис сторінки (рос.)"
+        description_en: "Опис сторінки (eng.)"
       
       post:
         title: "Назва"
-        title_ru: "Назва <span>(рос.)</span>"
-        title_en: "Назва <span>(eng.)</span>"
+        title_ru: "Назва (рос.)"
+        title_en: "Назва (eng.)"
         content: "Зміст"
-        content_ru: "Зміст <span>(рос.)</span>"
-        content_en: "Зміст <span>(eng.)</span>"
+        content_ru: "Зміст (рос.)"
+        content_en: "Зміст (eng.)"
         created_at: "Дата / Час"
         picture: "Зображення"
       
       page:
         title: "Назва"
-        title_ru: "Назва <span>(рос.)</span>"
-        title_en: "Назва <span>(eng.)</span>"
+        title_ru: "Назва (рос.)"
+        title_en: "Назва (eng.)"
         content: "Зміст"
-        content_ru: "Зміст <span>(рос.)</span>"
-        content_en: "Зміст <span>(eng.)</span>"
+        content_ru: "Зміст (рос.)"
+        content_en: "Зміст (eng.)"
       
       tag:
         name: "Назва"

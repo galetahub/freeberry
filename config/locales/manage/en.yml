@@ -14,8 +14,8 @@ en:
       
       structure:
         title: "Name"
-        title_ru: "Name <span>(Rus)</span>"
-        title_en: "Name <span>(eng.)</span>"
+        title_ru: "Name (Rus)"
+        title_en: "Name (eng.)"
         parent_id: "Main Categories"
         is_visible: "Show?"
         kind: "Page Type"
@@ -24,32 +24,32 @@ en:
       
       header:
         title: "Title page"
-        title_ru: "Title page <span>(Rus)</span>"
-        title_en: "Title page <span>(eng.)</span>"
+        title_ru: "Title page (Rus)"
+        title_en: "Title page (eng.)"
         keywords: "Keywords"
-        keywords_ru: "Keywords <span>(Rus)</span>"
-        keywords_en: "Keywords <span>(eng.)</span>"
+        keywords_ru: "Keywords (Rus)"
+        keywords_en: "Keywords (eng.)"
         description: "Page Description"
-        description_ru: "Description page <span>(Rus)</span>"
-        description_en: "Page Description <span>(eng.)</span>"
+        description_ru: "Description page (Rus)"
+        description_en: "Page Description (eng.)"
       
       post:
         title: "Name"
-        title_ru: "Name <span>(Rus)</span>"
-        title_en: "Name <span>(eng.)</span>"
+        title_ru: "Name (Rus)"
+        title_en: "Name (eng.)"
         content: "Content"
-        content_ru: "Content <span>(Rus)</span>"
-        content_en: "Contents <span>(eng.)</span>"
+        content_ru: "Content (Rus)"
+        content_en: "Contents (eng.)"
         created_at: "Date / Time"
         picture: "Picture"
       
       page:
         title: "Name"
-        title_ru: "Name <span>(Rus)</span>"
-        title_en: "Name <span>(eng.)</span>"
+        title_ru: "Name (Rus)"
+        title_en: "Name (eng.)"
         content: "Content"
-        content_ru: "Content <span>(Rus)</span>"
-        content_en: "Contents <span>(eng.)</span>"
+        content_ru: "Content (Rus)"
+        content_en: "Contents (eng.)"
       
       tag:
         name: "Name"

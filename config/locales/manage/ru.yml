@@ -14,8 +14,8 @@ ru:
       
       structure:
         title: "Название"
-        title_ru: "Название <span>(рус.)</span>"
-        title_en: "Название <span>(eng.)</span>"
+        title_ru: "Название (рус.)"
+        title_en: "Название (eng.)"
         parent_id: "Главная категория"
         is_visible: "Отображать?"
         kind: "Тип страницы"
@@ -24,32 +24,32 @@ ru:
       
       header:
         title: "Заглавие страницы"
-        title_ru: "Заглавие страницы <span>(рус.)</span>"
-        title_en: "Заглавие страницы <span>(eng.)</span>"
+        title_ru: "Заглавие страницы (рус.)"
+        title_en: "Заглавие страницы (eng.)"
         keywords: "Ключевые слова"
-        keywords_ru: "Ключевые слова <span>(рус.)</span>"
-        keywords_en: "Ключевые слова <span>(eng.)</span>"
+        keywords_ru: "Ключевые слова (рус.)"
+        keywords_en: "Ключевые слова (eng.)"
         description: "Описание страницы"
-        description_ru: "Описание страницы <span>(рус.)</span>"
-        description_en: "Описание страницы <span>(eng.)</span>"
+        description_ru: "Описание страницы (рус.)"
+        description_en: "Описание страницы (eng.)"
       
       post:
         title: "Название"
-        title_ru: "Название <span>(рус.)</span>"
-        title_en: "Название <span>(eng.)</span>"
+        title_ru: "Название (рус.)"
+        title_en: "Название (eng.)"
         content: "Содержание"
-        content_ru: "Содержание <span>(рус.)</span>"
-        content_en: "Содержание <span>(eng.)</span>"
+        content_ru: "Содержание (рус.)"
+        content_en: "Содержание (eng.)"
         created_at: "Дата/Время"
         picture: "Картинка"
       
       page:
         title: "Название"
-        title_ru: "Название <span>(рус.)</span>"
-        title_en: "Название <span>(eng.)</span>"
+        title_ru: "Название (рус.)"
+        title_en: "Название (eng.)"
         content: "Содержание"
-        content_ru: "Содержание <span>(рус.)</span>"
-        content_en: "Содержание <span>(eng.)</span>"
+        content_ru: "Содержание (рус.)"
+        content_en: "Содержание (eng.)"
       
       tag:
         name: "Название"
