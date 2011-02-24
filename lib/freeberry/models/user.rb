@@ -108,7 +108,7 @@ module Freeberry
             self.login ||= begin
               tmp_login = email.split('@').first unless email.blank?
         		  tmp_login ||= ActiveSupport::SecureRandom.hex(7)
-        		  tmp_login.parameterize.downcase.gsub('.', '_')
+        		  tmp_login.parameterize.downcase.gsub(/[^A-Za-z0-9-]+/, '-').gsub(/-+/, '-')
             end
           end
       end
