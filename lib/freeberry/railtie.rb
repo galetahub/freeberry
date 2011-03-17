@@ -23,6 +23,10 @@ module Freeberry
     config.after_initialize do
       ::ActionController::Base.send :include, Freeberry::Controllers::HeadOptions
       ::ActionView::Base.send :include, Freeberry::Controllers::HelperUtils
+      
+      ::Paperclip.interpolates('basename') do |attachment, style|
+        Freeberry::Utils.parameterize_filename(attachment.original_filename.gsub(/#{File.extname(attachment.original_filename)}$/, ""))
+      end
     end
     
     rake_tasks do

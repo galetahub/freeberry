@@ -14,7 +14,7 @@ module Freeberry
             belongs_to :assetable, :polymorphic => true
     
             before_validation :make_content_type
-            before_create :read_dimensions, :parameterize_filename
+            before_create :read_dimensions
           end
         end
         
@@ -52,23 +52,24 @@ module Freeberry
           I18n.l(created_at, :format => "%d.%m.%Y %H:%M")
         end
         
-        def to_xml(options = {})
-          builder = options[:builder] ||= Nokogiri::XML::Builder.new(options)
-
-          builder.send(self.type.to_s.downcase) do |xml|
-            xml.id_ self.id
-            xml.filename self.filename
-            xml.size self.size
-            xml.path self.url
+        def to_xml(options = {}, &block)
+          options = {:only => [:id], :root => 'asset'}.merge(options)
+          
+          options[:procs] ||= Proc.new do |options, record| 
+            options[:builder].tag!('filename', filename)
+            options[:builder].tag!('path', url)
+            options[:builder].tag!('size', size)
             
-            xml.styles do
-              self.styles.each do |style|
-                xml.send(style.first, self.url(style.first))
+            unless styles.empty?
+              options[:builder].tag!('styles') do |xml|
+                styles.each do |style|
+                  xml.tag!(style.first, url(style.first))
+                end
               end
-            end unless self.styles.empty?
+            end
           end
           
-          builder.to_xml
+          super
         end
         
         def has_dimensions?
@@ -85,13 +86,6 @@ module Freeberry
         end
         
         protected
-        
-          def parameterize_filename
-            unless data_file_name.blank?
-              filename = Freeberry::Utils.parameterize_filename(data_file_name)
-              self.data.instance_write(:file_name, filename)
-            end  
-          end
         
           def read_dimensions
             if image? && has_dimensions?
