@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Igor Galeta", "Pavlo Galeta"]
-  s.date = %q{2011-03-17}
+  s.date = %q{2011-03-18}
   s.description = %q{Freeberry is a Aimbulance CRM System}
   s.email = %q{galeta.igor@gmail.com}
   s.extra_rdoc_files = [
@@ -314,7 +314,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{https://github.com/galetahub/freeberry}
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{freeberry}
-  s.rubygems_version = %q{1.6.2}
+  s.rubygems_version = %q{1.3.7}
   s.summary = %q{Rails CRM System}
   s.test_files = [
     "test/freeberry_test.rb",
@@ -322,6 +322,7 @@ Gem::Specification.new do |s|
   ]
 
   if s.respond_to? :specification_version then
+    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
