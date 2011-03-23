@@ -1,16 +1,11 @@
-<% javascript "swfupload/swfupload.js", "swfupload/swfupload.queue.js", "swfupload/fileprogress.js", "swfupload/handlers.js" %>
+<% javascript "swfupload/swfupload", "swfupload/swfupload.queue", "swfupload/fileprogress", "swfupload/handlers" %>
 
 <script type="text/javascript">
-		var swfu;
-		var assetable_type = "<%= model.class.to_s %>";
-		var assetable_id = "<%= model.id %>";
-		var upload_path = "<%= manage_assets_path_with_session_information(klass, {:collection=>1}) %>";
-	
-		function init_swfupload() {
-			swfu = new SWFUpload({
+	  $(document).ready(function(){
+	    new SWFUpload({
 				// Backend settings
-				upload_url: upload_path,
-				post_params: {"assetable_type" : assetable_type, "assetable_id" : assetable_id},
+				upload_url: "<%= control_assets_path_with_session_information(klass, {:collection=>1}) %>",
+				post_params: {"assetable_type" : "<%= model.class.to_s %>", "assetable_id" : "<%= model.id %>"},
 				file_post_name: "data_file",
 
 				// Flash file settings
@@ -41,7 +36,7 @@
 				button_cursor: SWFUpload.CURSOR.HAND,
 				
 				// Flash Settings
-				flash_url : "/swf/swfupload.swf",
+				flash_url : "/javascripts/swfupload/swfupload.swf",
 
 				custom_settings : { 
 					progressTarget : <%=raw "swf_container_#{model.id}".inspect %>,
@@ -52,8 +47,5 @@
 				// Debug settings
 				debug: <%= Rails.env.development? ? 'true' : 'false' %>
 			});
-      
-		};
-		
-		$(document).ready(init_swfupload);
+	  });
 </script>
