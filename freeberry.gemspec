@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Igor Galeta", "Pavlo Galeta"]
-  s.date = %q{2011-03-18}
+  s.date = %q{2011-03-23}
   s.description = %q{Freeberry is a Aimbulance CRM System}
   s.email = %q{galeta.igor@gmail.com}
   s.extra_rdoc_files = [
@@ -182,10 +182,16 @@ Gem::Specification.new do |s|
     "lib/generators/freeberry/base/templates/javascripts/datepicker/jquery-ui-i18n.js",
     "lib/generators/freeberry/base/templates/javascripts/datepicker/jquery.ui.datepicker-ru.js",
     "lib/generators/freeberry/base/templates/javascripts/datepicker/jquery.ui.datepicker-uk.js",
-    "lib/generators/freeberry/base/templates/javascripts/jquery.fancybox-1.3.2.pack.js",
+    "lib/generators/freeberry/base/templates/javascripts/jquery.fancybox-1.3.4.pack.js",
+    "lib/generators/freeberry/base/templates/javascripts/jquery.tmpl.min.js",
     "lib/generators/freeberry/base/templates/javascripts/manage.js",
     "lib/generators/freeberry/base/templates/javascripts/preloader.js",
     "lib/generators/freeberry/base/templates/javascripts/rails.js",
+    "lib/generators/freeberry/base/templates/javascripts/swfupload/fileprogress.js",
+    "lib/generators/freeberry/base/templates/javascripts/swfupload/handlers.js",
+    "lib/generators/freeberry/base/templates/javascripts/swfupload/swfupload.js",
+    "lib/generators/freeberry/base/templates/javascripts/swfupload/swfupload.queue.js",
+    "lib/generators/freeberry/base/templates/javascripts/swfupload/swfupload.swf",
     "lib/generators/freeberry/base/templates/javascripts/wp_cookie.js",
     "lib/generators/freeberry/base/templates/stylesheets/fancybox/images/blank.gif",
     "lib/generators/freeberry/base/templates/stylesheets/fancybox/images/fancy_close.png",
@@ -207,7 +213,7 @@ Gem::Specification.new do |s|
     "lib/generators/freeberry/base/templates/stylesheets/fancybox/images/fancybox-x.png",
     "lib/generators/freeberry/base/templates/stylesheets/fancybox/images/fancybox-y.png",
     "lib/generators/freeberry/base/templates/stylesheets/fancybox/images/fancybox.png",
-    "lib/generators/freeberry/base/templates/stylesheets/fancybox/jquery.fancybox-1.3.2.css",
+    "lib/generators/freeberry/base/templates/stylesheets/fancybox/jquery.fancybox-1.3.4.css",
     "lib/generators/freeberry/base/templates/stylesheets/manage/ie.css",
     "lib/generators/freeberry/base/templates/stylesheets/manage/main.css",
     "lib/generators/freeberry/base/templates/stylesheets/manage/panel.css",
@@ -314,7 +320,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{https://github.com/galetahub/freeberry}
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{freeberry}
-  s.rubygems_version = %q{1.3.7}
+  s.rubygems_version = %q{1.6.2}
   s.summary = %q{Rails CRM System}
   s.test_files = [
     "test/freeberry_test.rb",
@@ -322,7 +328,6 @@ Gem::Specification.new do |s|
   ]
 
   if s.respond_to? :specification_version then
-    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
