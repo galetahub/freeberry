@@ -26,7 +26,7 @@ module Freeberry
       where = options.delete(:conditions)
       
       {
-        :order => (self.order_by || order || "id DESC"),
+        :order => (self.order_by || order || "#{@klass.quoted_table_name}.id DESC"),
         :conditions => (self.conditions || where)
       }.merge(options)
     end

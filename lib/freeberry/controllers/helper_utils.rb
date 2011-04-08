@@ -23,7 +23,7 @@ module Freeberry
       end
       
       def page_title
-        h([@page_title, I18n.t("page.title")].compact.join(' – '))
+        h([@page_title, I18n.t("page.title")].compact.join(' | '))
       end
       
       def page_keywords
