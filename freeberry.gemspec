@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Igor Galeta", "Pavlo Galeta"]
-  s.date = %q{2011-03-23}
+  s.date = %q{2011-04-08}
   s.description = %q{Freeberry is a Aimbulance CRM System}
   s.email = %q{galeta.igor@gmail.com}
   s.extra_rdoc_files = [
