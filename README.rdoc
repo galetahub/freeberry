@@ -12,11 +12,11 @@ In your Gemfile:
   gem 'devise', '1.1.5'
   gem 'paperclip', '2.3.8'
   gem 'nokogiri', '1.4.4'
-  gem 'cancan', '1.5.1'
+  gem 'cancan', '1.6.4'
   gem 'inherited_resources', '1.2.1'
   gem 'haddock', '0.2.2'
   gem "mime-types", '1.16', :require => 'mime/types'
-  gem "ckeditor", '3.5.0'
+  gem "ckeditor", '3.5.2'
   
   gem 'awesome_nested_set', :git => 'git://github.com/galetahub/awesome_nested_set.git'
   gem 'will_paginate', :git => 'git://github.com/galetahub/will_paginate.git', :branch => 'rails3'
